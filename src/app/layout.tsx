@@ -20,7 +20,7 @@ const geistMono = Geist_Mono({
 const playfairDisplay = Playfair_Display({
   subsets: ['latin'],
   variable: '--font-playfair-display',
-  weight: ['400', '700', '900'], 
+  weight: ['400', '700', '900'],
   style: ['normal', 'italic'],
 });
 
@@ -35,7 +35,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark"> {/* Force dark theme */}
+    <html lang="en" className="dark">
+      {/* Site uses dark theme by default */}
       <body
         className={cn(
           'min-h-screen bg-background font-sans antialiased text-foreground',
