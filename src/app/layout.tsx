@@ -5,6 +5,7 @@ import './globals.css';
 import { cn } from '@/lib/utils';
 import { NavigationBar } from '@/components/layout/NavigationBar';
 import { Toaster } from "@/components/ui/toaster";
+import SplineViewerScript from '@/components/SplineViewerScript';
 
 const inter = Inter({
   variable: '--font-inter',
@@ -26,9 +27,9 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+ children: React.ReactNode;
 }>) {
-  return (
+ return (
     <html lang="en">
       <body
         className={cn(
@@ -37,7 +38,11 @@ export default function RootLayout({
           playfairDisplay.variable
         )}
       >
-        <div className="relative flex min-h-screen flex-col">
+        <head>
+ {/* Add the Spline viewer script here */}
+ <SplineViewerScript />
+ </head>
+ <div className="relative flex min-h-screen flex-col">
           <NavigationBar />
           <main className="flex-1 flex flex-col items-center pl-16"> {/* Add pl-16 for fixed sidebar */}
             <div className="container mx-auto max-w-6xl w-full px-4 py-8">
@@ -50,3 +55,4 @@ export default function RootLayout({
     </html>
   );
 }
+

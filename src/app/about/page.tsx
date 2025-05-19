@@ -62,7 +62,7 @@ export default function AboutPage() {
         <div className="md:col-span-2 w-full">
           <div className="relative aspect-[3/4] rounded-lg overflow-hidden shadow-lg border-2 border-secondary/30 group">
             <Image
-              src="https://placehold.co/600x800.png"
+              src="/images/Profile Picture.png"
               alt="Husan Aulakh"
               layout="fill"
               objectFit="cover"

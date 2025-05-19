@@ -25,8 +25,8 @@ const educationData: TimelineEvent[] = [
     type: 'award',
     title: 'Le Prix Gerry Denault',
     institution: 'Awarded for achievements',
-    date: '2017 - 2020',
-    description: 'Recognized for significant accomplishments.',
+    date: '2020',
+    description: "Aberhart's Le Prix Gerry Denault is awarded to two individuals in the French Immersion program who demonstrate excellence academically, model by speaking in French, participate in various French activities throughout the school and embody the French Culture. - William Aberhart High School French department",
   },
   {
     id: 'award2',
@@ -34,7 +34,15 @@ const educationData: TimelineEvent[] = [
     title: 'William Aberhart Alumni Scholarship',
     institution: 'Awarded by William Aberhart High School Alumni',
     date: '2020',
-    description: 'Scholarship awarded for academic excellence and community involvement.',
+    description: 'One of 2 recipients at William Aberhart for academic excellence, leadership and community activities.',
+  },
+  {
+    id: 'edu2',
+    type: 'education',
+    title: 'William Aberhart High School',
+    institution: 'Awarded by William Aberhart High School Alumni',
+    date: '2017 - 2020',
+    // description: '',
   },
 ];
 
