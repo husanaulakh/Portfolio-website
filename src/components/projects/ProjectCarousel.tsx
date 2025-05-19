@@ -1,3 +1,4 @@
+
 "use client";
 
 import * as React from "react";
@@ -32,11 +33,10 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
 
   React.useEffect(() => {
     if (carouselRef.current) {
-      // Ensures that each item takes full width of the container
       const itemWidth = carouselRef.current.parentElement?.clientWidth || 0;
       carouselRef.current.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
     }
-  }, [currentIndex, projects]); // Add projects dependency to re-calc on resize if itemWidth changes
+  }, [currentIndex, projects]);
   
   React.useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -85,11 +85,11 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
         style={{ width: `${projects.length * 100}%` }} 
       >
         {projects.map((project) => (
-          <div key={project.slug} className="w-full flex-shrink-0" style={{ width: `${100 / projects.length}%`}}> {/* Each item takes its proportional width */}
-             <div className="px-2 md:px-4"> {/* Padding for spacing between items if visible */}
-                <Card className="bg-card/60 backdrop-blur-sm shadow-xl overflow-hidden h-full flex flex-col border-primary/20 hover:border-primary/40 transition-all">
+          <div key={project.slug} className="w-full flex-shrink-0" style={{ width: `${100 / projects.length}%`}}>
+             <div className="px-2 md:px-4">
+                <Card className="bg-card backdrop-blur-sm shadow-lg overflow-hidden h-full flex flex-col border-border hover:border-primary/40 transition-all">
                   <CardHeader className="p-4 sm:p-6">
-                    <div className="relative w-full aspect-video mb-4 rounded-md overflow-hidden bg-secondary/30 group">
+                    <div className="relative w-full aspect-video mb-4 rounded-md overflow-hidden bg-background/50 group">
                       <Image
                         src={project.imageUrl || "https://placehold.co/600x338.png"}
                         alt={`${project.title} preview`}
@@ -105,16 +105,16 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
                     <CardDescription className="text-muted-foreground text-center h-12 line-clamp-2">{project.tagline}</CardDescription>
                   </CardHeader>
                   <CardContent className="flex-grow p-4 sm:p-6 pt-0">
-                    <p className="text-foreground/80 text-center line-clamp-3 text-sm sm:text-base">{project.shortDescription}</p>
+                    <p className="text-foreground/90 text-center line-clamp-3 text-sm sm:text-base">{project.shortDescription}</p>
                   </CardContent>
                   <CardFooter className="p-4 sm:p-6 pt-2 flex flex-col sm:flex-row gap-3 justify-center">
-                    <Button asChild variant="default" className="bg-primary text-primary-foreground hover:bg-primary/90 w-full sm:w-auto shadow-md hover:shadow-lg transition-shadow">
+                    <Button asChild variant="default" className="bg-primary text-primary-foreground hover:bg-primary/90 w-full sm:w-auto shadow-sm hover:shadow-md transition-shadow">
                       <Link href={`/projects/${project.slug}`}>
                         <Eye className="mr-2 h-4 w-4" /> View Project
                       </Link>
                     </Button>
                     {project.liveUrl && (
-                      <Button asChild variant="outline" className="border-accent text-accent hover:bg-accent/10 w-full sm:w-auto shadow-sm hover:shadow-md transition-shadow">
+                      <Button asChild variant="outline" className="border-secondary text-secondary-foreground hover:bg-secondary/10 hover:text-secondary w-full sm:w-auto shadow-sm hover:shadow-md transition-shadow">
                         <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                           <ExternalLink className="mr-2 h-4 w-4" /> Live Demo
                         </a>
@@ -133,7 +133,7 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
             variant="ghost"
             size="icon"
             onClick={prevProject}
-            className="absolute left-0 sm:left-1 top-1/2 -translate-y-1/2 z-10 bg-card/50 hover:bg-card/80 text-primary rounded-full h-10 w-10 backdrop-blur-sm"
+            className="absolute left-0 sm:left-1 top-1/2 -translate-y-1/2 z-10 bg-card/80 hover:bg-card text-primary rounded-full h-10 w-10 backdrop-blur-sm"
             aria-label="Previous project"
           >
             <ArrowLeft className="h-5 w-5" />
@@ -142,7 +142,7 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
             variant="ghost"
             size="icon"
             onClick={nextProject}
-            className="absolute right-0 sm:right-1 top-1/2 -translate-y-1/2 z-10 bg-card/50 hover:bg-card/80 text-primary rounded-full h-10 w-10 backdrop-blur-sm"
+            className="absolute right-0 sm:right-1 top-1/2 -translate-y-1/2 z-10 bg-card/80 hover:bg-card text-primary rounded-full h-10 w-10 backdrop-blur-sm"
             aria-label="Next project"
           >
             <ArrowRight className="h-5 w-5" />

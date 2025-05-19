@@ -24,15 +24,15 @@ const educationData: TimelineEvent[] = [
     id: 'award1',
     type: 'award',
     title: 'Le Prix Gerry Denault',
-    institution: 'Awarded for achievements', // Assuming this is general, can be specified if known
-    date: '2017 - 2020', // CV lists 2017-2020, might be a multi-year award or a range
+    institution: 'Awarded for achievements',
+    date: '2017 - 2020',
     description: 'Recognized for significant accomplishments.',
   },
   {
     id: 'award2',
     type: 'award',
     title: 'William Aberhart Alumni Scholarship',
-    institution: 'Awarded by William Aberhart High School Alumni', // Assuming based on name
+    institution: 'Awarded by William Aberhart High School Alumni',
     date: '2020',
     description: 'Scholarship awarded for academic excellence and community involvement.',
   },
@@ -41,7 +41,7 @@ const educationData: TimelineEvent[] = [
 export default function EducationTimeline() {
   return (
     <section id="education" className="space-y-8">
-      <h2 className="font-serif text-4xl font-bold text-center">Education & Awards</h2>
+      <h2 className="font-serif text-4xl font-bold text-center text-primary">Education & Awards</h2>
       <div className="relative pl-6 border-l-2 border-primary/70 space-y-10 max-w-3xl mx-auto">
         {educationData.map((event) => (
           <div key={event.id} className="relative">
@@ -52,23 +52,23 @@ export default function EducationTimeline() {
                 <Award className="h-3.5 w-3.5 text-primary" />
               )}
             </div>
-            <Card className="ml-8 bg-card/50 shadow-lg hover:shadow-primary/20 transition-shadow duration-300 border-border hover:border-primary/30">
+            <Card className="ml-8 bg-card shadow-md hover:shadow-sm transition-shadow duration-300 border-border hover:border-primary/50">
               <CardHeader>
-                <CardTitle className="font-serif text-2xl text-primary/90">{event.title}</CardTitle>
+                <CardTitle className="font-serif text-2xl text-primary">{event.title}</CardTitle>
                 {event.institution && (
                   <CardDescription className="text-muted-foreground flex items-center text-md">
-                     {event.type === 'education' ? <GraduationCap className="h-4 w-4 mr-2" /> : <Award className="h-4 w-4 mr-2" />}
+                     {event.type === 'education' ? <GraduationCap className="h-4 w-4 mr-2 text-secondary" /> : <Award className="h-4 w-4 mr-2 text-secondary" />}
                     {event.institution}
                   </CardDescription>
                 )}
                  <div className="text-sm text-muted-foreground flex items-center pt-1">
-                    <CalendarDays className="h-4 w-4 mr-2" />
+                    <CalendarDays className="h-4 w-4 mr-2 text-secondary" />
                     {event.date}
                 </div>
               </CardHeader>
               {event.description && (
                 <CardContent>
-                  <p className="text-foreground/80">{event.description}</p>
+                  <p className="text-foreground/90">{event.description}</p>
                 </CardContent>
               )}
             </Card>

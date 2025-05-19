@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect, useTransition } from 'react';
@@ -60,7 +61,8 @@ export default function WorkHistoryEditor() {
         toast({
           title: "Success!",
           description: "Work history rewritten by AI.",
-          className: "bg-accent text-accent-foreground border-accent",
+          // Toast will use accent color by default if not specified, which is now terracotta.
+          // className: "bg-accent text-accent-foreground border-accent",
         });
         setIsModalOpen(false);
       } catch (error) {
@@ -75,10 +77,10 @@ export default function WorkHistoryEditor() {
   };
 
   return (
-    <Card className="bg-card/50 shadow-lg max-w-3xl mx-auto">
+    <Card className="bg-card shadow-lg max-w-3xl mx-auto">
       <CardHeader>
-        <CardTitle className="font-serif text-3xl flex items-center">
-          <Sparkles className="h-6 w-6 mr-2 text-accent" />
+        <CardTitle className="font-serif text-3xl flex items-center text-primary">
+          <Sparkles className="h-6 w-6 mr-2 text-primary" /> {/* Was accent, now primary */}
           AI-Powered Summary
         </CardTitle>
         <CardDescription>
@@ -101,15 +103,15 @@ export default function WorkHistoryEditor() {
 
         <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
           <DialogTrigger asChild>
-            <Button variant="outline" className="border-accent text-accent hover:bg-accent/10 hover:text-accent shadow-sm">
+            <Button variant="outline" className="border-primary text-primary hover:bg-primary/10 hover:text-primary-foreground shadow-sm"> {/* Was accent, now primary */}
               <Sparkles className="mr-2 h-4 w-4" />
               Rewrite with AI
             </Button>
           </DialogTrigger>
           <DialogContent className="sm:max-w-[480px] bg-card border-border">
             <DialogHeader>
-              <DialogTitle className="font-serif text-2xl">AI Rewrite Options</DialogTitle>
-              <DialogDescription>
+              <DialogTitle className="font-serif text-2xl text-primary">AI Rewrite Options</DialogTitle>
+              <DialogDescription className="text-muted-foreground">
                 Provide guidance for the AI to tailor the rewritten description.
               </DialogDescription>
             </DialogHeader>
@@ -121,7 +123,7 @@ export default function WorkHistoryEditor() {
                   value={description}
                   readOnly
                   rows={3}
-                  className="bg-input/50 border-border/50 text-sm"
+                  className="bg-input/80 border-border/70 text-sm"
                 />
               </div>
               <div className="space-y-1.5">
@@ -147,7 +149,7 @@ export default function WorkHistoryEditor() {
             </div>
             <DialogFooter className="gap-2 sm:gap-0">
               <DialogClose asChild>
-                <Button variant="outline">Cancel</Button>
+                <Button variant="outline" className="border-secondary text-secondary-foreground hover:bg-secondary/10 hover:text-secondary">Cancel</Button>
               </DialogClose>
               <Button type="button" onClick={handleRewrite} disabled={isPending || !description.trim()} className="bg-primary hover:bg-primary/90 text-primary-foreground">
                 {isPending ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Sparkles className="mr-2 h-4 w-4" />}

@@ -17,7 +17,7 @@ interface Skill {
 }
 
 const skillsData: Skill[] = [
-  // Software
+  // Software from CV
   { name: 'Python', level: 90, category: 'Software' },
   { name: 'Java', level: 80, category: 'Software' },
   { name: 'C/C++', level: 85, category: 'Software' },
@@ -37,21 +37,26 @@ const skillsData: Skill[] = [
   { name: 'Git', level: 90, category: 'Software' },
   { name: 'Gazebo ROS', level: 75, category: 'Software' },
   { name: 'Blender (Scripting)', level: 70, category: 'Software' },
-  // Electrical Engineering
+  // Electrical Engineering from CV
   { name: 'Circuit Design', level: 80, category: 'EE' },
   { name: 'PCB Design', level: 75, category: 'EE' },
-  { name: 'Microcontrollers (ESP32, Arduino)', level: 85, category: 'EE' },
+  { name: 'ESP32', level: 80, category: 'EE'},
+  { name: 'BluePill (STM32)', level: 75, category: 'EE'},
+  { name: 'Arduino UNO', level: 85, category: 'EE' },
   { name: 'Oscilloscope', level: 70, category: 'EE' },
-  // Mechanical Engineering
-  { name: 'CAD (SolidWorks, OnShape)', level: 85, category: 'ME' },
+  // Mechanical Engineering from CV
+  { name: 'SolidWorks', level: 85, category: 'ME' },
+  { name: 'OnShape', level: 80, category: 'ME' },
   { name: '3D Printing', level: 90, category: 'ME' },
-  { name: 'Fabrication (Laser/Water Jet/Lathe)', level: 80, category: 'ME' },
+  { name: 'Laser Cutter', level: 80, category: 'ME'},
+  { name: 'Water Jet', level: 75, category: 'ME'},
+  { name: 'Lathe', level: 70, category: 'ME'},
 ];
 
 const chartConfig = {
   level: {
     label: "Proficiency",
-    color: "hsl(var(--primary))",
+    color: "hsl(var(--primary))", // Will use Terracotta
   },
 } satisfies ChartConfig;
 
@@ -63,25 +68,25 @@ export default function SkillsSection() {
   const renderSkillChart = (title: string, data: Skill[], icon: React.ElementType, description: string) => {
     const IconComponent = icon;
     return (
-      <Card className="bg-card/50 shadow-lg flex-1 min-w-[300px] md:min-w-[350px]">
+      <Card className="bg-card shadow-lg flex-1 min-w-[300px] md:min-w-[350px]">
         <CardHeader className="pb-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <IconComponent className="h-7 w-7 text-accent" />
-              <CardTitle className="text-2xl font-serif">{title}</CardTitle>
+              <IconComponent className="h-7 w-7 text-primary" /> {/* Icon color to primary (Terracotta) */}
+              <CardTitle className="text-2xl font-serif text-primary">{title}</CardTitle> {/* Title color to primary */}
             </div>
             <LucideBarChart className="h-5 w-5 text-muted-foreground" />
           </div>
           <CardDescription>{description}</CardDescription>
         </CardHeader>
         <CardContent>
-          <ChartContainer config={chartConfig} className="h-[300px] w-full"> {/* Increased height for more skills */}
+          <ChartContainer config={chartConfig} className="h-[300px] w-full">
             <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={data} layout="vertical" margin={{ left: 5, right: 25, top:0, bottom:0 }} barSize={12} barGap={2}> {/* Adjusted barSize and barGap */}
+              <BarChart data={data} layout="vertical" margin={{ left: 5, right: 25, top:0, bottom:0 }} barSize={12} barGap={2}>
                 <XAxis type="number" domain={[0, 100]} stroke="hsl(var(--muted-foreground))" fontSize={10} axisLine={false} tickLine={false} />
                 <YAxis dataKey="name" type="category" stroke="hsl(var(--muted-foreground))" fontSize={10} width={130} tick={{ fill: 'hsl(var(--foreground))' }} axisLine={false} tickLine={false}/>
                 <ChartTooltip
-                  cursor={{ fill: 'hsl(var(--accent)/0.1)' }}
+                  cursor={{ fill: 'hsl(var(--primary)/0.1)' }} // Tooltip cursor with primary color
                   content={<ChartTooltipContent indicator="dot" hideLabel nameKey="name" />}
                 />
                 <Bar dataKey="level" fill="var(--color-level)" radius={[0, 4, 4, 0]} />
@@ -95,7 +100,7 @@ export default function SkillsSection() {
 
   return (
     <section id="skills" className="space-y-8">
-      <h2 className="font-serif text-4xl font-bold text-center">Skills Proficiency</h2>
+      <h2 className="font-serif text-4xl font-bold text-center text-primary">Skills Proficiency</h2> {/* Title color to primary */}
       <div className="flex flex-wrap gap-6 justify-center">
         {renderSkillChart('Software & AI', softwareSkills, Cog, "Crafting intelligent systems and digital experiences.")}
         {renderSkillChart('Electrical Engineering', eeSkills, Cpu, "Designing circuits and embedded solutions.")}

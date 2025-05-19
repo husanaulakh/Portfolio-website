@@ -1,7 +1,8 @@
+
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
-import { CheckCircle, UserCircle, Linkedin, Github, Zap, AwardIcon, Users } from 'lucide-react';
+import { CheckCircle, UserCircle, Award as AwardIconLucide, Users } from 'lucide-react'; // Renamed Award to AwardIconLucide to avoid conflict
 import SkillsSection from '@/components/about/SkillsSection';
 import EducationTimeline from '@/components/about/EducationTimeline';
 
@@ -49,7 +50,7 @@ export default function AboutPage() {
   return (
     <div className="space-y-12 py-8">
       <section className="text-center">
-        <h1 className="font-serif text-5xl font-bold mb-4">About Me</h1>
+        <h1 className="font-serif text-5xl font-bold mb-4 text-primary">About Me</h1>
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
           An Engineering Physics student at UBC driven by a passion for innovation at the intersection of physics, mathematics, and engineering.
         </p>
@@ -59,7 +60,7 @@ export default function AboutPage() {
 
       <section className="grid md:grid-cols-5 gap-8 md:gap-12 items-start">
         <div className="md:col-span-2 w-full">
-          <div className="relative aspect-[3/4] rounded-lg overflow-hidden shadow-xl border-2 border-primary/30 group">
+          <div className="relative aspect-[3/4] rounded-lg overflow-hidden shadow-lg border-2 border-secondary/30 group">
             <Image
               src="https://placehold.co/600x800.png"
               alt="Husan Aulakh"
@@ -68,15 +69,15 @@ export default function AboutPage() {
               data-ai-hint="portrait technology student"
               className="rounded-lg group-hover:scale-105 transition-transform duration-300"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-earth-text/30 to-transparent"></div>
           </div>
         </div>
         <div className="md:col-span-3 space-y-6">
-          <Card className="bg-card/50 shadow-lg">
+          <Card className="bg-card shadow-lg">
             <CardHeader>
               <div className="flex items-center space-x-3">
                 <UserCircle className="h-10 w-10 text-primary" />
-                <CardTitle className="font-serif text-3xl md:text-4xl">Husan Aulakh</CardTitle>
+                <CardTitle className="font-serif text-3xl md:text-4xl text-primary">Husan Aulakh</CardTitle>
               </div>
                <CardDescription className="text-lg text-muted-foreground pt-2">
                 Engineering Physics Student | AI & Robotics Enthusiast
@@ -88,12 +89,12 @@ export default function AboutPage() {
               </p>
               <div>
                 <h3 className="text-xl font-semibold mb-3 text-primary flex items-center">
-                  <Zap className="h-5 w-5 mr-2"/> Quick Facts & Interests:
+                  <AwardIconLucide className="h-5 w-5 mr-2 text-primary"/> Quick Facts & Interests: {/* Using AwardIconLucide to represent a general "highlight" or "star" icon */}
                 </h3>
                 <ul className="space-y-2.5">
                   {quickFacts.map((fact, index) => (
                     <li key={index} className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-accent mr-2.5 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="h-5 w-5 text-primary mr-2.5 mt-0.5 flex-shrink-0" /> {/* Changed from accent to primary */}
                       <span className="text-foreground/90">{fact}</span>
                     </li>
                   ))}
@@ -115,14 +116,14 @@ export default function AboutPage() {
       <Separator className="bg-border/50" />
       
       <section id="leadership-volunteering" className="space-y-8">
-        <h2 className="font-serif text-4xl font-bold text-center">Leadership & Volunteering</h2>
+        <h2 className="font-serif text-4xl font-bold text-center text-primary">Leadership & Volunteering</h2>
         <div className="space-y-6 max-w-3xl mx-auto">
           {nonTechnicalExperience.map((item) => (
-            <Card key={item.id} className="bg-card/50 shadow-md hover:shadow-primary/20 transition-shadow duration-300">
+            <Card key={item.id} className="bg-card shadow-md hover:shadow-sm transition-shadow duration-300">
               <CardHeader>
                 <div className="flex items-center space-x-3">
                   <item.icon className="h-6 w-6 text-primary" />
-                  <CardTitle className="font-serif text-xl text-primary/90">{item.title}</CardTitle>
+                  <CardTitle className="font-serif text-xl text-primary">{item.title}</CardTitle>
                 </div>
                 <CardDescription className="text-sm text-muted-foreground pt-1">{item.date}</CardDescription>
               </CardHeader>

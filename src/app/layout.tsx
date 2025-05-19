@@ -1,19 +1,13 @@
 
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
-import { Playfair_Display } from 'next/font/google';
+import { Inter, Playfair_Display } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import { NavigationBar } from '@/components/layout/NavigationBar';
 import { Toaster } from "@/components/ui/toaster";
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
+const inter = Inter({
+  variable: '--font-inter',
   subsets: ['latin'],
 });
 
@@ -35,13 +29,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      {/* Site uses dark theme by default */}
+    <html lang="en">
       <body
         className={cn(
           'min-h-screen bg-background font-sans antialiased text-foreground',
-          geistSans.variable,
-          geistMono.variable,
+          inter.variable,
           playfairDisplay.variable
         )}
       >
@@ -52,10 +44,6 @@ export default function RootLayout({
               {children}
             </div>
           </main>
-          {/* Optional: A simple footer could be added here */}
-          {/* <footer className="py-6 text-center text-sm text-muted-foreground pl-16">
-            © {new Date().getFullYear()} Husan Aulakh. All rights reserved.
-          </footer> */}
         </div>
         <Toaster />
       </body>

@@ -1,93 +1,96 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 150 30% 5%; /* Dark, slightly desaturated cyan-green */
-    --foreground: 150 20% 90%; /* Off-white with a hint of cyan-green */
+    --background: 44 43% 92%; /* #F5F0E1 Warm Ivory */
+    --foreground: 15 5% 23%; /* #3E3A39 Rich Charcoal */
 
-    --card: 150 25% 8%; 
-    --card-foreground: 150 20% 90%;
+    --card: 40 100% 99%; /* #FFFDF8 Lighter Ivory */
+    --card-foreground: 15 5% 23%; /* Rich Charcoal */
 
-    --popover: 150 25% 8%; 
-    --popover-foreground: 150 20% 90%;
+    --popover: 40 100% 99%; /* Lighter Ivory */
+    --popover-foreground: 15 5% 23%; /* Rich Charcoal */
 
-    --primary: 140 80% 50%; /* Main interactive green - like terminal text */
-    --primary-foreground: 140 80% 15%; /* Dark text on primary green */
+    --primary: 13 46% 62%; /* #C98474 Terracotta */
+    --primary-foreground: 15 5% 23%; /* Rich Charcoal (for text on terracotta buttons) */
 
-    --secondary: 150 40% 15%; /* Muted, darker green for secondary elements */
-    --secondary-foreground: 150 20% 80%;
+    --secondary: 151 16% 49%; /* #6A8E7F Sage Green */
+    --secondary-foreground: 44 43% 96%; /* Very Light Ivory (for text on sage buttons) */
 
-    --muted: 150 30% 12%;
-    --muted-foreground: 150 15% 60%; 
+    --muted: 44 30% 88%; /* Slightly darker ivory for muted backgrounds */
+    --muted-foreground: 15 5% 43%; /* Medium Charcoal for muted text */
 
-    --accent: 140 90% 60%; /* Brighter, vibrant green for highlights */
-    --accent-foreground: 140 90% 10%; 
+    --accent: 13 46% 62%; /* #C98474 Terracotta (same as primary for highlights) */
+    --accent-foreground: 15 5% 23%; /* Rich Charcoal (for text on terracotta accents) */
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 55% 50%; /* Muted Red (e.g., #CC5252) */
+    --destructive-foreground: 44 43% 96%; /* Very Light Ivory */
 
-    --border: 140 60% 30%; /* Greenish border */
-    --input: 150 20% 10%; /* Dark input bg */
-    --ring: 140 90% 60%; /* Primary green for focus rings */
+    --border: 151 16% 49%; /* #6A8E7F Sage Green (for general borders, including cards) */
+    --input: 40 100% 98%; /* #FFFDF8 Lighter Ivory for input backgrounds, slightly off white */
+    --ring: 13 46% 62%; /* #C98474 Terracotta (for focus rings) */
 
     --radius: 0.5rem;
 
-    /* Sidebar specific colors */
-    --sidebar-background: 150 30% 6%; 
-    --sidebar-foreground: 150 15% 85%;
-    --sidebar-primary: 140 80% 50%;
-    --sidebar-primary-foreground: 140 80% 15%;
-    --sidebar-accent: 140 90% 60%;
-    --sidebar-accent-foreground: 140 90% 10%;
-    --sidebar-border: 140 50% 20%;
-    --sidebar-ring: 140 90% 60%;
+    /* Sidebar specific colors - aligned with the new theme */
+    --sidebar-background: 44 43% 92%; /* Warm Ivory */
+    --sidebar-foreground: 15 5% 23%; /* Rich Charcoal */
+    --sidebar-primary: 13 46% 62%; /* Terracotta */
+    --sidebar-primary-foreground: 15 5% 23%; /* Rich Charcoal */
+    --sidebar-accent: 13 46% 62%; /* Terracotta */
+    --sidebar-accent-foreground: 15 5% 23%; /* Rich Charcoal */
+    --sidebar-border: 151 16% 65%; /* Lighter Sage for sidebar internal borders */
+    --sidebar-ring: 13 46% 62%; /* Terracotta */
   }
 
+  /* The .dark class will now reflect the same light earth tones theme */
   .dark {
-    /* Same as root for a dark-by-default theme */
-    --background: 150 30% 5%;
-    --foreground: 150 20% 90%;
-    --card: 150 25% 8%;
-    --card-foreground: 150 20% 90%;
-    --popover: 150 25% 8%;
-    --popover-foreground: 150 20% 90%;
-    --primary: 140 80% 50%;
-    --primary-foreground: 140 80% 15%;
-    --secondary: 150 40% 15%;
-    --secondary-foreground: 150 20% 80%;
-    --muted: 150 30% 12%;
-    --muted-foreground: 150 15% 60%;
-    --accent: 140 90% 60%;
-    --accent-foreground: 140 90% 10%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 140 60% 30%;
-    --input: 150 20% 10%;
-    --ring: 140 90% 60%;
+    --background: 44 43% 92%;
+    --foreground: 15 5% 23%;
+    --card: 40 100% 99%;
+    --card-foreground: 15 5% 23%;
+    --popover: 40 100% 99%;
+    --popover-foreground: 15 5% 23%;
+    --primary: 13 46% 62%;
+    --primary-foreground: 15 5% 23%;
+    --secondary: 151 16% 49%;
+    --secondary-foreground: 44 43% 96%;
+    --muted: 44 30% 88%;
+    --muted-foreground: 15 5% 43%;
+    --accent: 13 46% 62%;
+    --accent-foreground: 15 5% 23%;
+    --destructive: 0 55% 50%;
+    --destructive-foreground: 44 43% 96%;
+    --border: 151 16% 49%;
+    --input: 40 100% 98%;
+    --ring: 13 46% 62%;
     
-    /* Sidebar specific colors */
-    --sidebar-background: 150 30% 6%;
-    --sidebar-foreground: 150 15% 85%;
-    --sidebar-primary: 140 80% 50%;
-    --sidebar-primary-foreground: 140 80% 15%;
-    --sidebar-accent: 140 90% 60%;
-    --sidebar-accent-foreground: 140 90% 10%;
-    --sidebar-border: 140 50% 20%;
-    --sidebar-ring: 140 90% 60%;
+    --sidebar-background: 44 43% 92%;
+    --sidebar-foreground: 15 5% 23%;
+    --sidebar-primary: 13 46% 62%;
+    --sidebar-primary-foreground: 15 5% 23%;
+    --sidebar-accent: 13 46% 62%;
+    --sidebar-accent-foreground: 15 5% 23%;
+    --sidebar-border: 151 16% 65%;
+    --sidebar-ring: 13 46% 62%;
   }
 }
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border; /* Default border color will be Sage Green */
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground; /* Warm Ivory bg, Rich Charcoal text */
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-serif;
+    @apply font-serif text-foreground; /* Headings will use Rich Charcoal */
+  }
+  a {
+    @apply text-foreground hover:text-primary transition-colors; /* Charcoal links, hover to Terracotta */
   }
   html {
     scroll-behavior: smooth;

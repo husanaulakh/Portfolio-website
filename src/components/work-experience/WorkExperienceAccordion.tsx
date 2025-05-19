@@ -17,7 +17,7 @@ interface WorkExperienceItem {
 }
 
 const workExperienceData: WorkExperienceItem[] = [
-  {
+   {
     id: "work1",
     company: "TRIUMF Innovations Inc.",
     title: "Business Specialist",
@@ -32,7 +32,7 @@ const workExperienceData: WorkExperienceItem[] = [
     id: "work2",
     company: "Novarc Technologies",
     title: "Machine Learning Developer Intern",
-    dates: "April – Aug 2024", // CV has this for two roles, assuming it's correct
+    dates: "April – Aug 2024",
     summary: [
       "Fine-tuned state-of-the-art vision models like DINO and SegFormer for welding tasks, enhancing detection and segmentation accuracy by 15%.",
       "Improved model convergence and achieved 95% accuracy through hyper-parameter tuning using Weights and Biases sweeps.",
@@ -79,33 +79,33 @@ const workExperienceData: WorkExperienceItem[] = [
 export default function WorkExperienceAccordion() {
   return (
     <section id="professional-history">
-      <h2 className="font-serif text-4xl font-bold text-center mb-8">Technical Work Experience</h2>
+      <h2 className="font-serif text-4xl font-bold text-center mb-8 text-primary">Technical Work Experience</h2>
       <Accordion type="single" collapsible className="w-full space-y-4 max-w-4xl mx-auto">
         {workExperienceData.map((job) => (
-          <AccordionItem value={job.id} key={job.id} className="bg-card/50 border-border rounded-lg shadow-md overflow-hidden hover:border-primary/30 transition-colors">
-            <AccordionTrigger className="p-6 hover:no-underline data-[state=open]:bg-primary/5">
-              <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full text-left gap-2">
+          <AccordionItem value={job.id} key={job.id} className="bg-card border-border rounded-lg shadow-md overflow-hidden hover:border-primary/50 transition-colors">
+            <AccordionTrigger className="p-6 hover:no-underline data-[state=open]:bg-primary/5 text-left">
+              <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full gap-2">
                 <div className="flex-grow">
                   <h3 className="text-xl font-semibold text-primary flex items-center">
-                    <Briefcase className="h-5 w-5 mr-2.5 flex-shrink-0" />
+                    <Briefcase className="h-5 w-5 mr-2.5 flex-shrink-0 text-primary" />
                     {job.title}
                   </h3>
                   <p className="text-muted-foreground flex items-center mt-1 text-sm">
-                    <Building className="h-4 w-4 mr-2 flex-shrink-0" />
+                    <Building className="h-4 w-4 mr-2 flex-shrink-0 text-secondary" />
                     {job.company}
                   </p>
                 </div>
                 <p className="text-sm text-muted-foreground flex items-center flex-shrink-0 md:pl-4">
-                  <CalendarDays className="h-4 w-4 mr-2 flex-shrink-0" />
+                  <CalendarDays className="h-4 w-4 mr-2 flex-shrink-0 text-secondary" />
                   {job.dates}
                 </p>
               </div>
             </AccordionTrigger>
-            <AccordionContent className="p-6 pt-0 bg-card/20">
+            <AccordionContent className="p-6 pt-0 bg-card/30">
               <ul className="space-y-3 text-foreground/90">
                 {job.summary.map((point, index) => (
                   <li key={index} className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-accent mr-3 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" /> {/* Was accent, now primary */}
                     <span>{point}</span>
                   </li>
                 ))}

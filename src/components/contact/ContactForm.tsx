@@ -1,3 +1,4 @@
+
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -47,7 +48,6 @@ export default function ContactForm() {
   async function onSubmit(data: ContactFormValues) {
     if (data.honeypot) { 
       console.log("Honeypot field filled, submission blocked.");
-      // Optionally, show a generic success message to not alert bots
       toast({
         title: "Message processing...",
         description: "Thank you for your message.",
@@ -70,7 +70,8 @@ export default function ContactForm() {
         toast({
           title: "Message Sent!",
           description: "Thank you for reaching out. I'll get back to you soon.",
-          className: "bg-accent text-accent-foreground border-accent",
+          // The toast will use default variant which now reflects earth tones.
+          // className: "bg-primary text-primary-foreground border-primary", // Use primary for success toast
         });
         form.reset();
       } catch (error: any) {
@@ -84,10 +85,10 @@ export default function ContactForm() {
   }
 
   return (
-    <Card className="bg-card/50 shadow-lg w-full">
+    <Card className="bg-card shadow-lg w-full">
       <CardHeader>
-        <CardTitle className="font-serif text-3xl">Send a Message</CardTitle>
-        <CardDescription>Fill out the form below and I&apos;ll respond as soon as possible.</CardDescription>
+        <CardTitle className="font-serif text-3xl text-primary">Send a Message</CardTitle>
+        <CardDescription className="text-muted-foreground">Fill out the form below and I&apos;ll respond as soon as possible.</CardDescription>
       </CardHeader>
       <CardContent>
         <Form {...form}>
