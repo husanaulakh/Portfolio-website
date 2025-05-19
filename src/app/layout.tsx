@@ -1,3 +1,4 @@
+
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { Playfair_Display } from 'next/font/google';
@@ -34,7 +35,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark"> {/* Force dark theme */}
+    <html lang="en" className="dark">{/* Force dark theme */}
       <body
         className={cn(
           'min-h-screen bg-background font-sans antialiased text-foreground',
