@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { GraduationCap, Award, CalendarDays } from 'lucide-react';
 
@@ -14,34 +15,26 @@ const educationData: TimelineEvent[] = [
   {
     id: 'edu1',
     type: 'education',
-    title: 'M.S. in Robotics',
-    institution: 'Carnegie Mellon University',
-    date: '2020 - 2022',
-    description: 'Focused on AI, machine learning, and autonomous systems. Thesis on multi-agent path planning.',
+    title: 'BASc in Engineering Physics',
+    institution: 'University of British Columbia, Vancouver',
+    date: '2020 - 2025',
+    description: 'Integrates physics, mathematics, and engineering to enable the translation of novel ideas to real-life applications. Key courses: Software construction, quantum mechanics, mechanical and electrical design and experimental techniques.',
   },
   {
     id: 'award1',
     type: 'award',
-    title: 'Siebel Scholar',
-    institution: 'Carnegie Mellon University',
-    date: '2021',
-    description: 'Recognized for outstanding academic achievement and leadership in graduate studies.',
+    title: 'Le Prix Gerry Denault',
+    institution: 'Awarded for achievements', // Assuming this is general, can be specified if known
+    date: '2017 - 2020', // CV lists 2017-2020, might be a multi-year award or a range
+    description: 'Recognized for significant accomplishments.',
   },
   {
-    id: 'edu2',
-    type: 'education',
-    title: 'B.S. in Mechanical Engineering',
-    institution: 'Massachusetts Institute of Technology',
-    date: '2016 - 2020',
-    description: 'Concentration in Controls, Instrumentation & Robotics. Minor in Computer Science.',
-  },
-   {
     id: 'award2',
     type: 'award',
-    title: 'MIT $100K Launch Competition Finalist',
-    institution: 'Massachusetts Institute of Technology',
+    title: 'William Aberhart Alumni Scholarship',
+    institution: 'Awarded by William Aberhart High School Alumni', // Assuming based on name
     date: '2020',
-    description: 'Finalist for an innovative assistive robotics startup concept.',
+    description: 'Scholarship awarded for academic excellence and community involvement.',
   },
 ];
 

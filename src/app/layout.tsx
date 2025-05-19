@@ -25,8 +25,8 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: 'Neon Canvas',
-  description: 'A portfolio by John Doe, built with Next.js',
+  title: 'Husan Aulakh | Portfolio',
+  description: 'Portfolio of Husan Aulakh, Engineering Physics student at UBC, showcasing projects in AI, Robotics, and Software Development.',
 };
 
 export default function RootLayout({
@@ -35,7 +35,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">{/* Force dark theme */}
+    <html lang="en" className="dark"> {/* Force dark theme */}
       <body
         className={cn(
           'min-h-screen bg-background font-sans antialiased text-foreground',
@@ -53,7 +53,7 @@ export default function RootLayout({
           </main>
           {/* Optional: A simple footer could be added here */}
           {/* <footer className="py-6 text-center text-sm text-muted-foreground pl-16">
-            © {new Date().getFullYear()} Neon Canvas. All rights reserved.
+            © {new Date().getFullYear()} Husan Aulakh. All rights reserved.
           </footer> */}
         </div>
         <Toaster />
