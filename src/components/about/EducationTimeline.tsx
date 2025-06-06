@@ -18,7 +18,7 @@ const educationData: TimelineEvent[] = [
     title: 'BASc in Engineering Physics',
     institution: 'University of British Columbia, Vancouver',
     date: '2020 - 2025',
-    description: 'Integrates physics, mathematics, and engineering to enable the translation of novel ideas to real-life applications. Key courses: Software construction, quantum mechanics, mechanical and electrical design and experimental techniques.',
+    description: "Integrates physics, mathematics, and engineering to enable the translation of novel ideas to real-life applications. Key courses include experimental methods, software development, quantum mechanics and advanced physics."
   },
   {
     id: 'award1',

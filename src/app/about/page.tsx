@@ -11,15 +11,28 @@ const nonTechnicalExperience = [
     id: 'vpsub',
     title: 'Member – UBC Vice-Provost Revenue Diversification Subcommittee - New Ventures',
     date: 'Jan – Apr 2025',
-    description: 'Participating in a sub-committee to brainstorm and research the viability of alternative revenue channels for the University. Responsible for making researched recommendations of possible entrepreneurial opportunities.',
+    description: 'Participating in a sub-committee with a mandate to brainstorm and research the viability of alternative revenue channels for the University. The New Ventures Subcommittee is responsible for making researched recommendations of possible entrepreneurial opportunities for the university.',
     icon: Users,
   },
   {
     id: 'hmsasc',
     title: 'Volunteer – Healthier Masculinities, AMS Sexual Assault Support Centre',
-    date: 'Sep 2024 – Present',
-    description: 'Coordinated setup and logistics for the Healthier Masculinities initiative, ensuring smooth execution of events. Actively engaged participants in discussions, promoting a supportive environment.',
+    date: 'Sep 2024 – Apr 2025',
     icon: Users,
+    jsx: (
+      <span>
+        Coordinated setup and logistics for the{' '}
+        <a
+          href="https://www.amssasc.ca/education/healthier-masculinities/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary underline hover:text-primary/80"
+        >
+          Healthier Masculinities initiative
+        </a>
+        , promoting open, respectful dialogue around healthy gender expression, accountability, and consent. Co-facilitated a workshop with UBC fraternities on understanding sexual violence, harassment, and how to build safer communities. Actively supported participant engagement, helping foster inclusive and honest conversations.
+      </span>
+    ),
   },
   {
     id: 'epcouncil',
@@ -32,7 +45,7 @@ const nonTechnicalExperience = [
     id: 'bethany',
     title: 'Meal-Time Companion – Bethany Senior Living',
     date: 'Mar 2018 – Apr 2021',
-    description: 'Assisted with feeding and providing companionship to elderly residents during meal times, fostering a caring and supportive dining environment.',
+    description: 'Spent time with elderly residents during meal times, helping with feeding, chatting, and simply being present. It was a small role that made a big impact, and taught me the value of patience, empathy, and connection.',
     icon: Users,
   },
 ];
@@ -40,20 +53,19 @@ const nonTechnicalExperience = [
 
 export default function AboutPage() {
   const quickFacts = [
-    "Passionate about AI, robotics, and translating novel ideas to real-life applications.",
-    "Experienced in software development, machine learning, and engineering design.",
-    "Committed to lifelong learning and pushing technological boundaries.",
-    "Enjoys collaborative environments and creative problem-solving.",
-    "Interests: Entrepreneurship, venture development, biomedical technologies, basketball, volleyball, hiking, and drones."
+    "Programming my DJI Tello drone to follow me and do aerial tricks using computer vision and machine learning.",
+    "Setting up a Raspberry Pi-powered Network Attached Storage (NAS) with user authentication and a 5TB drive (mostly because I'm always out of storage on my phone).",
+    "Fine-tuning an LLM with RAG for fun.",
+    "Building a property portfolio web app to track expenses, revenue, and metrics using Google APIs."
   ];
 
   return (
     <div className="space-y-12 py-8">
       <section className="text-center">
         <h1 className="font-serif text-5xl font-bold mb-4 text-primary">About Me</h1>
-        <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-          An Engineering Physics student at UBC driven by a passion for innovation at the intersection of physics, mathematics, and engineering.
-        </p>
+        {/* <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          Hey, I'm Husan, an Engineering Physics student at UBC and I love taking wild ideas and turning them into real, working things.
+        </p> */}
       </section>
 
       <Separator className="bg-border/50" />
@@ -61,14 +73,23 @@ export default function AboutPage() {
       <section className="grid md:grid-cols-5 gap-8 md:gap-12 items-start">
         <div className="md:col-span-2 w-full">
           <div className="relative aspect-[3/4] rounded-lg overflow-hidden shadow-lg border-2 border-secondary/30 group">
-            <Image
+            {/* <Image
               src="/images/Profile Picture.png"
               alt="Husan Aulakh"
               layout="fill"
               objectFit="cover"
               data-ai-hint="portrait technology student"
               className="rounded-lg group-hover:scale-105 transition-transform duration-300"
+            /> */}
+            <Image
+              src="/images/Profile Picture.png"
+              alt="Husan Aulakh"
+              fill
+              priority
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover rounded-lg group-hover:scale-105 transition-transform duration-300"
             />
+
             <div className="absolute inset-0 bg-gradient-to-t from-earth-text/30 to-transparent"></div>
           </div>
         </div>
@@ -85,11 +106,12 @@ export default function AboutPage() {
             </CardHeader>
             <CardContent className="space-y-4">
               <p className="text-lg text-foreground/90">
-                <strong>Mission:</strong> To leverage a strong foundation in engineering physics and a passion for cutting-edge technology to develop innovative solutions for real-world challenges. I thrive on integrating software, hardware, and creative problem-solving to contribute to impactful projects, particularly in AI, robotics, and biomedical applications.
+              Hey, I'm an Engineering Physics graduate at UBC and I love taking wild ideas and turning them into real, working things. Whether it's building robots, tinkering with AI, or programming my Roomba to dance, I'm all about learning by doing!
+              when I'm not coding or soldering, you'll find me reading, playing basketball, hiking a random mountain, or coming up with the next side project. I'm always up for new challenges, good company, and turning "what if?" into "look what I built!".
               </p>
               <div>
                 <h3 className="text-xl font-semibold mb-3 text-primary flex items-center">
-                  <AwardIconLucide className="h-5 w-5 mr-2 text-primary"/> Quick Facts & Interests: {/* Using AwardIconLucide to represent a general "highlight" or "star" icon */}
+                  <AwardIconLucide className="h-5 w-5 mr-2 text-primary"/> What I'm building next: {/* Using AwardIconLucide to represent a general "highlight" or "star" icon */}
                 </h3>
                 <ul className="space-y-2.5">
                   {quickFacts.map((fact, index) => (
@@ -128,7 +150,7 @@ export default function AboutPage() {
                 <CardDescription className="text-sm text-muted-foreground pt-1">{item.date}</CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-foreground/80">{item.description}</p>
+                <p className="text-foreground/80"> {'jsx' in item ? item.jsx : item.description}</p>
               </CardContent>
             </Card>
           ))}
