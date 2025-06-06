@@ -8,15 +8,15 @@ export default function WorkExperiencePage() {
       <section className="text-center">
         <h1 className="font-serif text-5xl font-bold mb-4">Work Experience</h1>
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-          A detailed overview of my professional journey and accomplishments, enhanced with AI assistance.
+          A detailed overview of my professional journey across engineering, software development, and applied machine learning.  
         </p>
       </section>
-
+{/* 
       <Separator className="bg-border/50" />
 
       <WorkHistoryEditor />
       
-      <Separator className="bg-border/50" />
+      <Separator className="bg-border/50" /> */}
       
       <WorkExperienceAccordion />
     </div>

@@ -31,11 +31,11 @@ export default function ContactPage() {
                 <Mail className="h-5 w-5 text-secondary mr-3 group-hover:text-primary transition-colors" /> {/* Icons changed to secondary (sage) */}
                 <span className="group-hover:text-primary transition-colors">husanaulakh5@gmail.com</span>
               </a>
-              <a href="tel:+16043603566" className="flex items-center group">
+              {/* <a href="tel:+1xxxxxxxxxx" className="flex items-center group">
                 <Phone className="h-5 w-5 text-secondary mr-3 group-hover:text-primary transition-colors" />
-                <span className="group-hover:text-primary transition-colors">+1 (604) 360-3566</span>
-              </a>
-              <a href="https://www.linkedin.com/in/husanaulakh/" target="_blank" rel="noopener noreferrer" className="flex items-center group">
+                <span className="group-hover:text-primary transition-colors">+1 (xxx) xxx-xxxx</span>
+              </a> */}
+              <a href="https://www.linkedin.com/in/husan-aulakh/" target="_blank" rel="noopener noreferrer" className="flex items-center group">
                 <Linkedin className="h-5 w-5 text-secondary mr-3 group-hover:text-primary transition-colors" />
                 <span className="group-hover:text-primary transition-colors">LinkedIn Profile</span>
               </a>
