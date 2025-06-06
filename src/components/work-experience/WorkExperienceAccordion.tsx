@@ -72,6 +72,13 @@ const workExperienceData: WorkExperienceItem[] = [
 export default function WorkExperienceAccordion() {
   return (
  <section id="professional-history" className="w-full space-y-4 max-w-4xl mx-auto">
+      {/* New Section */}
+      <div className="bg-card border border-border rounded-lg shadow-md p-6 mb-8">
+        <h2 className="text-2xl font-bold text-primary mb-3">What I Bring to a Team</h2>
+        <p className="text-foreground/90">
+          I enjoy fast-paced environments where I can blend my technical depth with creative problem-solving. I love working in teams, asking good questions, and figuring things out even when the answer isn’t obvious (yet).
+        </p>
+      </div>
       {workExperienceData.map((job) => (
         <div key={job.id} className="bg-card border border-border rounded-lg shadow-md overflow-hidden">
           <div className="p-6 bg-primary/5 text-left">
