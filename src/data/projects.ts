@@ -18,8 +18,8 @@ export const projectsData: Project[] = [
   {
     slug: "investment-memo-cdl",
     title: "Investment Memo Project – CDL Course",
-    tagline: "Secured $50K investment for a CDL-admitted venture.",
-    shortDescription: "Pitched to investment bankers and VCs, securing $50,000 for 'Puter'. Conducted market sizing, competitor analysis, and risk mapping, designing a full go-to-market strategy.",
+    tagline: "Secured $25K investment for a CDL-admitted venture.",
+    shortDescription: "Pitched to investment bankers and VCs, securing $25,000 for 'Puter'. Conducted market sizing, competitor analysis, and risk mapping, designing a full go-to-market strategy.",
     longDescription: `
       <p>As part of the Creative Destruction Lab (CDL) course, this project involved a deep dive into venture evaluation and strategy for the CDL-admitted venture "Puter".</p>
       <h3 class="text-xl font-semibold mt-4 mb-2 text-primary">Key Activities & Outcomes:</h3>
@@ -30,15 +30,15 @@ export const projectsData: Project[] = [
         <li>Worked iteratively with founders and CDL mentors to refine the pitch, roadmap milestones, and investment narrative.</li>
       </ul>
     `,
-    imageUrl: "https://placehold.co/600x400.png",
+    imageUrl: "/images/Puter_main.png",
     imageAiHint: "investment business",
     technologies: ["Venture Capital", "Market Analysis", "Pitching", "Go-to-Market Strategy", "Financial Modeling"],
-    detailsImageUrl: "https://placehold.co/300x400.png",
+    detailsImageUrl: "/images/Puter_page1.png",
     detailsImageAiHint: "strategy diagram"
   },
   {
     slug: "venture-strategy-cdl",
-    title: "Venture Strategy Project – CDL Course",
+    title: "Venture Strategy Project – Northernmost",
     tagline: "Strategic analysis and go-to-market planning for a CDL venture.",
     shortDescription: "Conducted situational analysis for a CDL-admitted venture, identifying market opportunities, risks, and competition. Developed a go-to-market plan and report, influencing mentor and investor decisions.",
     longDescription: `
@@ -51,53 +51,53 @@ export const projectsData: Project[] = [
         <li>Collaborated closely with the venture team and CDL mentors to refine strategies and recommendations.</li>
       </ul>
     `,
-    imageUrl: "https://placehold.co/600x400.png",
+    imageUrl: "/images/NorthernMost_main.png",
     imageAiHint: "business strategy",
     technologies: ["Strategic Planning", "Market Research", "Competitive Analysis", "Venture Development"],
-    detailsImageUrl: "https://placehold.co/300x400.png",
+    detailsImageUrl: "/images/NorthernMost_page1.png",
     detailsImageAiHint: "market analysis chart"
   },
-  {
-    slug: "ubc-agrobot-ai-lead",
-    title: "UBC Agrobot Applied AI Lead",
-    tagline: "Leading AI development for agricultural robotics.",
-    shortDescription: "Leading a team of 20+ students in developing AI-driven solutions for agricultural robotics, managing project timelines, delegating tasks, and fostering a collaborative environment.",
-    longDescription: `
-      <p>As the Applied AI Lead for the UBC Agrobot team, I oversee the development and implementation of artificial intelligence solutions for our agricultural robot.</p>
-      <h3 class="text-xl font-semibold mt-4 mb-2 text-primary">Responsibilities & Achievements:</h3>
-      <ul class="list-disc list-inside space-y-1">
-        <li>Leading a team of over 20 students.</li>
-        <li>Managing project timelines and delegating tasks effectively.</li>
-        <li>Fostering a collaborative and innovative team environment.</li>
-        <li>Guiding the development of AI-driven solutions for various agricultural tasks.</li>
-      </ul>
-      <p>This role started in May 2024 and is ongoing.</p>
-    `,
-    imageUrl: "https://placehold.co/600x400.png",
-    imageAiHint: "robotics team agriculture",
-    technologies: ["Team Leadership", "Project Management", "AI Development", "Robotics", "Python"],
-    detailsImageUrl: "https://placehold.co/300x400.png",
-    detailsImageAiHint: "robot arm schematic"
-  },
-  {
-    slug: "ubc-agrobot-ai-member",
-    title: "UBC Agrobot Applied AI Team Member",
-    tagline: "Fine-tuned YOLOv8 for maize detection with 95% accuracy.",
-    shortDescription: "Fine-tuned a YOLOv8 model for maize detection using Python and ARC Sockeye (HPC), achieving 95% accuracy. Deployed the real-time video processing system on Nvidia Jetson.",
-    longDescription: `
-      <p>Prior to leading the AI team, I was an active member contributing to specific AI model development for the UBC Agrobot project.</p>
-      <h3 class="text-xl font-semibold mt-4 mb-2 text-primary">Key Contributions:</h3>
-      <ul class="list-disc list-inside space-y-1">
-        <li>Fine-tuned a YOLOv8 model for maize detection using Python and UBC's ARC Sockeye high-performance computing cluster, achieving 95% accuracy.</li>
-        <li>Deployed the real-time video processing system on the Nvidia Jetson platform for sequential frame analysis in an agricultural setting.</li>
-      </ul>
-    `,
-    imageUrl: "https://placehold.co/600x400.png",
-    imageAiHint: "ai agriculture computer",
-    technologies: ["Computer Vision", "YOLOv8", "Python", "PyTorch", "Nvidia Jetson", "HPC"],
-    detailsImageUrl: "https://placehold.co/300x400.png",
-    detailsImageAiHint: "object detection diagram"
-  },
+  // {
+  //   slug: "ubc-agrobot-ai-lead",
+  //   title: "UBC Agrobot Applied AI Lead",
+  //   tagline: "Leading AI development for agricultural robotics.",
+  //   shortDescription: "Leading a team of 20+ students in developing AI-driven solutions for agricultural robotics, managing project timelines, delegating tasks, and fostering a collaborative environment.",
+  //   longDescription: `
+  //     <p>As the Applied AI Lead for the UBC Agrobot team, I oversee the development and implementation of artificial intelligence solutions for our agricultural robot.</p>
+  //     <h3 class="text-xl font-semibold mt-4 mb-2 text-primary">Responsibilities & Achievements:</h3>
+  //     <ul class="list-disc list-inside space-y-1">
+  //       <li>Leading a team of over 20 students.</li>
+  //       <li>Managing project timelines and delegating tasks effectively.</li>
+  //       <li>Fostering a collaborative and innovative team environment.</li>
+  //       <li>Guiding the development of AI-driven solutions for various agricultural tasks.</li>
+  //     </ul>
+  //     <p>This role started in May 2024 and is ongoing.</p>
+  //   `,
+  //   imageUrl: "https://placehold.co/600x400.png",
+  //   imageAiHint: "robotics team agriculture",
+  //   technologies: ["Team Leadership", "Project Management", "AI Development", "Robotics", "Python"],
+  //   detailsImageUrl: "https://placehold.co/300x400.png",
+  //   detailsImageAiHint: "robot arm schematic"
+  // },
+  // {
+  //   slug: "ubc-agrobot-ai-member",
+  //   title: "UBC Agrobot Applied AI Team Member",
+  //   tagline: "Fine-tuned YOLOv8 for maize detection with 95% accuracy.",
+  //   shortDescription: "Fine-tuned a YOLOv8 model for maize detection using Python and ARC Sockeye (HPC), achieving 95% accuracy. Deployed the real-time video processing system on Nvidia Jetson.",
+  //   longDescription: `
+  //     <p>Prior to leading the AI team, I was an active member contributing to specific AI model development for the UBC Agrobot project.</p>
+  //     <h3 class="text-xl font-semibold mt-4 mb-2 text-primary">Key Contributions:</h3>
+  //     <ul class="list-disc list-inside space-y-1">
+  //       <li>Fine-tuned a YOLOv8 model for maize detection using Python and UBC's ARC Sockeye high-performance computing cluster, achieving 95% accuracy.</li>
+  //       <li>Deployed the real-time video processing system on the Nvidia Jetson platform for sequential frame analysis in an agricultural setting.</li>
+  //     </ul>
+  //   `,
+  //   imageUrl: "https://placehold.co/600x400.png",
+  //   imageAiHint: "ai agriculture computer",
+  //   technologies: ["Computer Vision", "YOLOv8", "Python", "PyTorch", "Nvidia Jetson", "HPC"],
+  //   detailsImageUrl: "https://placehold.co/300x400.png",
+  //   detailsImageAiHint: "object detection diagram"
+  // },
   {
     slug: "3d-image-similarity-capstone",
     title: "3D Image Similarity Capstone Project",

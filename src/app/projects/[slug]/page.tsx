@@ -63,7 +63,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
           src={project.imageUrl || "https://placehold.co/1200x675.png"}
           alt={`${project.title} main image`}
           layout="fill"
-          objectFit="cover"
+          objectFit="contain"
           data-ai-hint={project.imageAiHint || "project showcase"}
           priority
           className="group-hover:scale-105 transition-transform duration-300"
@@ -126,11 +126,11 @@ export default function ProjectPage({ params }: ProjectPageProps) {
            {project.detailsImageUrl && (
             <Card className="bg-card shadow-md">
                 <CardHeader>
-                    <CardTitle className="font-serif text-2xl text-primary">Details</CardTitle>
-                    <CardDescription className="text-muted-foreground">Visual Aid / Schematic</CardDescription>
+                    <CardTitle className="font-serif text-2xl text-primary">Visual</CardTitle>
+                    {/* <CardDescription className="text-muted-foreground">Visual Aid / Schematic</CardDescription> */}
                 </CardHeader>
                 <CardContent>
-                    <div className="relative w-full aspect-[4/3] rounded-md overflow-hidden bg-background/30">
+                    <div className="relative w-full aspect-[11/16] rounded-md overflow-hidden bg-background/30">
                          <Image
                             src={project.detailsImageUrl}
                             alt="Project detail graphic"
