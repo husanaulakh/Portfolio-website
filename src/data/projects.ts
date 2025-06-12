@@ -15,89 +15,226 @@ export interface Project {
 }
 
 export const projectsData: Project[] = [
+  // {
+  //   slug: "investment-memo-cdl",
+  //   title: "Investment Memo Project – CDL Course",
+  //   tagline: "Secured $25K investment for a CDL-admitted venture.",
+  //   shortDescription: "Pitched to investment bankers and VCs, securing $25,000 for 'Puter'. Conducted market sizing, competitor analysis, and risk mapping, designing a full go-to-market strategy.",
+  //   longDescription: `
+  //     <p>As part of the Creative Destruction Lab (CDL) course, this project involved a deep dive into venture evaluation and strategy for the CDL-admitted venture "Puter".</p>
+  //     <h3 class="text-xl font-semibold mt-4 mb-2 text-primary">Key Activities & Outcomes:</h3>
+  //     <ul class="list-disc list-inside space-y-1">
+  //       <li>Pitched to a panel of investment bankers and VCs, successfully securing a $50,000 investment.</li>
+  //       <li>Conducted in-depth market sizing (TAM/SAM/SOM), competitor analysis, and risk mapping to evaluate commercial potential.</li>
+  //       <li>Designed a comprehensive go-to-market strategy, including value proposition, pricing model, sales channels, and beachhead market approach.</li>
+  //       <li>Worked iteratively with founders and CDL mentors to refine the pitch, roadmap milestones, and investment narrative.</li>
+  //     </ul>
+  //   `,
+  //   imageUrl: "/images/Puter_main.png",
+  //   imageAiHint: "investment business",
+  //   technologies: ["Venture Capital", "Market Analysis", "Pitching", "Go-to-Market Strategy", "Financial Modeling"],
+  //   detailsImageUrl: "/images/Puter_page1.png",
+  //   detailsImageAiHint: "strategy diagram"
+  // },
+  // {
+  //   slug: "investment-memo-cdl",
+  //   title: "Investment Memo Project – Puter",
+  //   tagline: "Built and presented an investment case that secured $25 K for a cloud-OS venture.",
+  //   shortDescription: "Developed a full investment memo for Puter—an open-source Internet OS—including market sizing, competitor benchmarking, financial valuation, and a storytelling pitch that won \$25 000 in CDL funding.",
+  //   longDescription: `
+  //     <p>
+  //       <strong>Context:</strong> Within UBC’s Creative Destruction Lab, I led the Investment Memo for Puter—an open-source “Internet OS” that streams your desktop, apps, and files instantly in any browser. 
+  //       Mentors guided us to turn technical strengths into investor-ready financials and narratives.
+  //     </p>
+  
+  //     <h3 class="text-xl font-semibold mt-6 mb-2 text-primary">What I Delivered</h3>
+  //     <ul class="ml-6 list-disc marker:text-primary space-y-2">
+  //       <li>
+  //         <strong>Market Sizing & Valuation:</strong> Estimated a \$50 B TAM by 2030, a \$5–7.5 B SAM for privacy-first cloud OS, and a \$50–150 M initial SOM—then built unit economics and a 5-year revenue forecast. 
+  //       </li>
+  //       <li>
+  //         <strong>Competitive Benchmarking:</strong> Compared Puter against Windows 365, Chrome OS, AWS WorkSpaces, Nextcloud, and DBOS—highlighting Puter’s unique open-source, privacy-first, and API-driven edge.
+  //       </li>
+  //       <li>
+  //         <strong>Pricing & Financial Model:</strong> Designed a freemium → enterprise subscription model, projecting break-even within 18 months and 3× ROI by Year 3 under conservative adoption assumptions.
+  //       </li>
+  //       <li>
+  //         <strong>Story-Driven Pitch:</strong> Crafted a narrative opening with user pain (costly upgrades, downtime, security breaches) and closed with Puter’s solution impact—then delivered live to VCs.
+  //       </li>
+  //       <li>
+  //         <strong>Secured Funding:</strong> Won \$25 000 in CDL seed investment, validating both the financial case and strategic positioning.
+  //       </li>
+  //     </ul>
+  
+  //     <h3 class="text-xl font-semibold mt-6 mb-2 text-primary">Impact</h3>
+  //     <p>
+  //       The Investment Memo transformed Puter from a technical demo into a fundable venture. Investors cited the clear financial roadmap and compelling market narrative as key reasons for backing.
+  //     </p>
+  
+  //     <p class="mt-4 italic text-sm">
+  //       Interested in the full memo—including detailed financial models and slide examples? <strong>Contact me</strong> for a review copy.
+  //     </p>
+  //   `,
+  //   imageUrl: "/images/Puter_main.png",
+  //   imageAiHint: "investment pitch slide",
+  //   technologies: [
+  //     "Market Sizing (TAM/SAM/SOM)",
+  //     "Competitive Benchmarking",
+  //     "Financial Modeling",
+  //     "Pricing Strategy",
+  //     "Storytelling Pitch",
+  //     "Venture Valuation"
+  //   ],
+  //   detailsImageUrl: "/images/Puter_page1.png",
+  //   detailsImageAiHint: "valuation and market model chart"
+  // },  
+
+  // {
+  //   slug: "investment-memo-cdl",
+  //   title: "Investment Memo Project – Puter",
+  //   tagline: "Built and presented an investment case that secured $25 000 for a cloud-OS venture.",
+  //   shortDescription: "Authored a comprehensive investment memo for Puter—an open-source Internet OS—including market sizing, competitive analysis, financial modeling, pricing strategy and a narrative pitch that won $25 000 in CDL funding.",
+  //   longDescription: `
+  //     <p><strong>Context</strong><br>
+  //     As part of UBC’s Creative Destruction Lab, I led the Investment Memo for Puter, a browser-streamed “Internet OS” that gives users instant access to their desktop, applications and files without expensive hardware upgrades.</p>
+  
+  //     <h3 class="text-xl font-semibold mt-4 mb-2 text-primary">Market Opportunity</h3>
+  //     <p>I forecasted a $50 billion total addressable market by 2030, identified a $5–7.5 billion serviceable market for privacy-focused cloud OS solutions, and applied adoption-curve assumptions to derive a $50–150 million obtainable market for an initial pilot.</p>
+  
+  //     <h3 class="text-xl font-semibold mt-4 mb-2 text-primary">Competitive Landscape</h3>
+  //     <p>I analyzed leading offerings—Windows 365, Chrome OS, AWS WorkSpaces, Nextcloud and Database-Oriented OS projects—to surface Puter’s unique strengths: an open-source codebase, privacy-first architecture, built-in developer APIs and seamless browser integration.</p>
+  
+  //     <h3 class="text-xl font-semibold mt-4 mb-2 text-primary">Financial Model & Pricing</h3>
+  //     <p>Developed a five-year subscription model starting with a freemium tier and progressing to paid developer and enterprise plans. Under conservative uptake scenarios, the model achieved break-even within 18 months and projected a triple return by year three.</p>
+  
+  //     <h3 class="text-xl font-semibold mt-4 mb-2 text-primary">Pitch & Outcomes</h3>
+  //     <p>I wove data and story together—opening with user frustrations around hardware costs, downtime and security risks, then demonstrating how Puter eliminates these pain points. The pitch secured $25 000 in seed funding, with mentors highlighting the clarity of our financial roadmap and the impact-driven narrative.</p>
+  
+  //     <p class="mt-4 italic text-sm">
+  //       Interested in the full investment memo, complete with spreadsheets and slide visuals? <strong>Contact me</strong> for a copy.
+  //     </p>
+  //   `,
+  //   imageUrl: "/images/Puter_main.png",
+  //   imageAiHint: "investment pitch slide",
+  //   technologies: [
+  //     "Market Sizing (TAM/SAM/SOM)",
+  //     "Competitive Analysis",
+  //     "Financial Modeling",
+  //     "Pricing Strategy",
+  //     "Pitch Storytelling",
+  //     "Venture Valuation"
+  //   ],
+  //   detailsImageUrl: "/images/Puter_page1.png",
+  //   detailsImageAiHint: "market and valuation chart"
+  // },  
+  
   {
-    slug: "investment-memo-cdl",
-    title: "Investment Memo Project – CDL Course",
-    tagline: "Secured $25K investment for a CDL-admitted venture.",
-    shortDescription: "Pitched to investment bankers and VCs, securing $25,000 for 'Puter'. Conducted market sizing, competitor analysis, and risk mapping, designing a full go-to-market strategy.",
+    slug: "investment-memo-pu",
+    title: "Investment Memo Project – Puter",
+    tagline: "Built and presented an investment case that secured $25 000 in CDL funding.",
+    shortDescription: "Led market sizing, competitive analysis, financial modeling, pricing strategy and narrative pitch for Puter—an open-source browser-streamed Internet OS—winning $25 000 in seed investment.",
     longDescription: `
-      <p>As part of the Creative Destruction Lab (CDL) course, this project involved a deep dive into venture evaluation and strategy for the CDL-admitted venture "Puter".</p>
-      <h3 class="text-xl font-semibold mt-4 mb-2 text-primary">Key Activities & Outcomes:</h3>
-      <ul class="list-disc list-inside space-y-1">
-        <li>Pitched to a panel of investment bankers and VCs, successfully securing a $50,000 investment.</li>
-        <li>Conducted in-depth market sizing (TAM/SAM/SOM), competitor analysis, and risk mapping to evaluate commercial potential.</li>
-        <li>Designed a comprehensive go-to-market strategy, including value proposition, pricing model, sales channels, and beachhead market approach.</li>
-        <li>Worked iteratively with founders and CDL mentors to refine the pitch, roadmap milestones, and investment narrative.</li>
+      <h2 class="text-2xl font-serif font-bold mb-4 text-primary">Project Overview</h2>
+      <p>
+        <strong>Background:</strong> The Creative Destruction Lab (CDL) is a mentorship-driven accelerator that helps science ventures refine their technology, business model, and investor narrative. For Puter—a privacy-first, open-source “Internet OS” that streams your entire desktop, applications and files in any browser—I authored the Investment Memo and delivered the pitch that won seed funding.
+      </p>
+  
+      <h3 class="text-xl font-semibold mt-6 mb-2 text-primary">What I Delivered</h3>
+      <ul class="ml-6 list-disc marker:text-primary space-y-2">
+        <li>
+          <strong>Market Sizing:</strong> Forecasted a $50 billion total addressable market by 2030, identified a $5–7.5 billion serviceable niche for privacy-focused cloud OS, and derived a $50–150 million obtainable market based on early-adopter diffusion rates.
+        </li>
+        <li>
+          <strong>Competitive Analysis:</strong> Mapped Puter against Windows 365, Chrome OS, AWS WorkSpaces, Nextcloud and DBOS projects—highlighting Puter’s open-source architecture, privacy guarantee, and built-in developer APIs.
+        </li>
+        <li>
+          <strong>Financial Modeling & Pricing:</strong> Developed a five-year subscription model starting with a freemium tier and advancing to paid developer and enterprise plans; projected break-even within 18 months and 3× ROI by Year 3.
+        </li>
+        <li>
+          <strong>Pitch Narrative:</strong> Crafted a story-driven presentation: opened with user pain (hardware costs, downtime, security breaches), demonstrated Puter’s impact (seamless access, cost savings, auto-updates), and closed with projected financial upside.
+        </li>
+        <li>
+          <strong>Funding Secured:</strong> Delivered the memo and live pitch to the CDL panel, successfully securing $25 000 in seed investment and mentor commitments.
+        </li>
       </ul>
+  
+      <h3 class="text-xl font-semibold mt-6 mb-2 text-primary">Outcome</h3>
+      <p>
+        The Investment Memo transformed Puter from a technical prototype into a fundable venture. Mentors and investors praised the clarity of the market analysis and the strength of the financial case, providing the team with both funding and a validated roadmap.
+      </p>
+  
+      <p class="mt-4 italic text-sm">
+        Interested in the full investment memo and all supporting analyses? <strong>Contact me</strong> to request a copy.
+      </p>
     `,
     imageUrl: "/images/Puter_main.png",
-    imageAiHint: "investment business",
-    technologies: ["Venture Capital", "Market Analysis", "Pitching", "Go-to-Market Strategy", "Financial Modeling"],
+    imageAiHint: "Puter investment memo cover slide",
+    technologies: [
+      "Market Sizing (TAM/SAM/SOM)",
+      "Competitive Analysis",
+      "Financial Modeling",
+      "Pricing Strategy",
+      "Pitch Development",
+      "Venture Valuation"
+    ],
     detailsImageUrl: "/images/Puter_page1.png",
-    detailsImageAiHint: "strategy diagram"
-  },
+    detailsImageAiHint: "Puter market and financial model chart"
+  },  
+
   {
-    slug: "venture-strategy-cdl",
+    slug: "venture-strategy-northernmost",
     title: "Venture Strategy Project – Northernmost",
     tagline: "Strategic analysis and go-to-market planning for a CDL venture.",
-    shortDescription: "Conducted situational analysis for a CDL-admitted venture, identifying market opportunities, risks, and competition. Developed a go-to-market plan and report, influencing mentor and investor decisions.",
+    shortDescription: "Developed a comprehensive venture strategy for Northernmost’s kidney‐transport innovation—validating market potential, defining competitive positioning, and mapping a pilot go-to-market plan.",
     longDescription: `
-      <p>This project involved strategic analysis and planning for a venture participating in the Creative Destruction Lab (CDL) program.</p>
-      <h3 class="text-xl font-semibold mt-4 mb-2 text-primary">Contributions:</h3>
+      <p>
+        <strong>Background:</strong> The Creative Destruction Lab (CDL) is a mentorship-driven accelerator that pairs science-based ventures with seasoned investors and industry experts. Over a series of goal-oriented sessions, teams refine their technology, business model, and investor narrative.
+      </p>
+      <p>
+        For Northernmost, me and my classmate tackled a critical healthcare challenge: existing kidney transport methods are either rudimentary (static cold storage) or prohibitively costly and complex (hypothermic machine perfusion). Our aim was to prove that a portable, reusable HaaS (Hardware as a Service) transport box with real-time GPS monitoring, could unlock a multi-hundred-million-dollar niche while improving transplant outcomes.
+      </p>
+  
+      <h3 class="text-xl font-semibold mt-4 mb-2 text-primary">What I Delivered</h3>
       <ul class="list-disc list-inside space-y-1">
-        <li>Conducted a situational analysis, identifying market opportunities, potential risks, and the competitive landscape.</li>
-        <li>Developed a tailored go-to-market plan.</li>
-        <li>Produced a comprehensive report to support the venture, which directly influenced mentor and investor decisions.</li>
-        <li>Collaborated closely with the venture team and CDL mentors to refine strategies and recommendations.</li>
+        <li>
+          <strong>Market Validation:</strong> Sized the total organ-transport market at $1.5 B, the North American kidney-transport niche at $363 M, and Northernmost’s obtainable HaaS segment at $235 M.
+        </li>
+        <li>
+          <strong>Competitive Positioning:</strong> Benchmarked incumbents and open-source alternatives, highlighting Northernmost’s advantages in cost ($3K per use vs. $4.5K disposable HMP), portability (cabin-friendly design), and continuous monitoring.
+        </li>
+        <li>
+          <strong>Go-to-Market Plan:</strong> Mapped a phased pilot across under-served OPOs (Texas → Louisiana → California), crafted a leasing-based pricing model, and outlined key logistics partnerships.
+        </li>
+        <li>
+          <strong>Risk & Opportunity Analysis:</strong> Identified regulatory pathways (FDA Class II, Health Canada), logistical risks, and strategic alliances to de-risk early deployment.
+        </li>
+        <li>
+          <strong>Executive Report:</strong> Compiled all findings into a clear, narrative-driven strategy document that earned mentor endorsement and positioned Northernmost for follow-on investment.
+        </li>
       </ul>
+  
+      <h3 class="text-xl font-semibold mt-4 mb-2 text-primary">Outcome</h3>
+      <p>
+        Mentors praised its depth and clarity. The venture strategy report solidified Northernmost’s value proposition, validated its market opportunity, and provided a practical roadmap for pilots.
+      </p>
+  
+      <p class="mt-4 italic text-sm">
+        Interested in the full strategy report including detailed data models, financial forecasts, and appendix materials? <strong>Contact me</strong> for a complete copy.
+      </p>
     `,
     imageUrl: "/images/NorthernMost_main.png",
-    imageAiHint: "business strategy",
-    technologies: ["Strategic Planning", "Market Research", "Competitive Analysis", "Venture Development"],
+    imageAiHint: "kidney transport strategy",
+    technologies: [
+      "Market Research",
+      "Competitive Benchmarking",
+      "Go-to-Market Planning",
+      "Financial Modelling",
+      "Risk Analysis",
+      "Strategic Reporting"
+    ],
     detailsImageUrl: "/images/NorthernMost_page1.png",
-    detailsImageAiHint: "market analysis chart"
-  },
-  // {
-  //   slug: "ubc-agrobot-ai-lead",
-  //   title: "UBC Agrobot Applied AI Lead",
-  //   tagline: "Leading AI development for agricultural robotics.",
-  //   shortDescription: "Leading a team of 20+ students in developing AI-driven solutions for agricultural robotics, managing project timelines, delegating tasks, and fostering a collaborative environment.",
-  //   longDescription: `
-  //     <p>As the Applied AI Lead for the UBC Agrobot team, I oversee the development and implementation of artificial intelligence solutions for our agricultural robot.</p>
-  //     <h3 class="text-xl font-semibold mt-4 mb-2 text-primary">Responsibilities & Achievements:</h3>
-  //     <ul class="list-disc list-inside space-y-1">
-  //       <li>Leading a team of over 20 students.</li>
-  //       <li>Managing project timelines and delegating tasks effectively.</li>
-  //       <li>Fostering a collaborative and innovative team environment.</li>
-  //       <li>Guiding the development of AI-driven solutions for various agricultural tasks.</li>
-  //     </ul>
-  //     <p>This role started in May 2024 and is ongoing.</p>
-  //   `,
-  //   imageUrl: "https://placehold.co/600x400.png",
-  //   imageAiHint: "robotics team agriculture",
-  //   technologies: ["Team Leadership", "Project Management", "AI Development", "Robotics", "Python"],
-  //   detailsImageUrl: "https://placehold.co/300x400.png",
-  //   detailsImageAiHint: "robot arm schematic"
-  // },
-  // {
-  //   slug: "ubc-agrobot-ai-member",
-  //   title: "UBC Agrobot Applied AI Team Member",
-  //   tagline: "Fine-tuned YOLOv8 for maize detection with 95% accuracy.",
-  //   shortDescription: "Fine-tuned a YOLOv8 model for maize detection using Python and ARC Sockeye (HPC), achieving 95% accuracy. Deployed the real-time video processing system on Nvidia Jetson.",
-  //   longDescription: `
-  //     <p>Prior to leading the AI team, I was an active member contributing to specific AI model development for the UBC Agrobot project.</p>
-  //     <h3 class="text-xl font-semibold mt-4 mb-2 text-primary">Key Contributions:</h3>
-  //     <ul class="list-disc list-inside space-y-1">
-  //       <li>Fine-tuned a YOLOv8 model for maize detection using Python and UBC's ARC Sockeye high-performance computing cluster, achieving 95% accuracy.</li>
-  //       <li>Deployed the real-time video processing system on the Nvidia Jetson platform for sequential frame analysis in an agricultural setting.</li>
-  //     </ul>
-  //   `,
-  //   imageUrl: "https://placehold.co/600x400.png",
-  //   imageAiHint: "ai agriculture computer",
-  //   technologies: ["Computer Vision", "YOLOv8", "Python", "PyTorch", "Nvidia Jetson", "HPC"],
-  //   detailsImageUrl: "https://placehold.co/300x400.png",
-  //   detailsImageAiHint: "object detection diagram"
-  // },
+    detailsImageAiHint: "market sizing chart"
+  },  
   {
     slug: "3d-image-similarity-capstone",
     title: "3D Image Similarity Capstone Project",
