@@ -1,5 +1,4 @@
-
-"use client";
+'use client';
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -12,29 +11,35 @@ export function NavigationBar() {
 
   return (
     <TooltipProvider delayDuration={100}>
-      <nav className="fixed left-0 top-0 h-full w-16 bg-background/90 backdrop-blur-md p-2 flex flex-col items-center justify-center shadow-md z-50 rounded-r-xl border-r border-border/30">
-        <ul className="space-y-4">
+      <nav
+        aria-label='Primary'
+        className='fixed inset-x-0 bottom-0 z-50 border-t border-border/40 bg-background/95 p-2 shadow-lg backdrop-blur md:inset-y-0 md:left-0 md:right-auto md:h-full md:w-16 md:rounded-r-xl md:rounded-t-none md:border-r md:border-t-0 md:p-2'
+      >
+        <ul className='flex items-center justify-around gap-1 md:flex-col md:justify-center md:gap-4 md:py-4'>
           {NAV_LINKS.map((item) => {
             const isActive = pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href));
+
             return (
-              <li key={item.href}>
+              <li key={item.href} className='flex-1 md:flex-none'>
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <Link
                       href={item.href}
-                      className={cn(
-                        'flex items-center justify-center p-3 rounded-lg text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors relative group',
-                        isActive && 'text-primary bg-primary/10'
-                      )}
                       aria-label={item.label}
+                      aria-current={isActive ? 'page' : undefined}
+                      className={cn(
+                        'relative flex items-center justify-center rounded-lg px-3 py-3 text-muted-foreground transition-colors hover:bg-primary/10 hover:text-primary focus-visible:bg-primary/10 md:min-h-12 md:min-w-12',
+                        isActive && 'bg-primary/10 text-primary'
+                      )}
                     >
-                      <item.icon className="w-6 h-6" />
+                      <item.icon className='h-6 w-6' aria-hidden='true' />
+                      <span className='sr-only'>{item.label}</span>
                       {isActive && (
-                        <span className="absolute left-0 top-1/2 -translate-y-1/2 h-6 w-1.5 bg-primary rounded-r-full shadow-sm shadow-primary/30"></span>
+                        <span className='absolute bottom-0 left-1/2 h-1.5 w-6 -translate-x-1/2 rounded-t-full bg-primary shadow-sm shadow-primary/30 md:left-0 md:top-1/2 md:h-6 md:w-1.5 md:-translate-y-1/2 md:translate-x-0 md:rounded-r-full md:rounded-t-none' />
                       )}
                     </Link>
                   </TooltipTrigger>
-                  <TooltipContent side="right" className="bg-card text-card-foreground border-border shadow-lg">
+                  <TooltipContent side='right' className='hidden border-border bg-card text-card-foreground shadow-lg md:block'>
                     <p>{item.label}</p>
                   </TooltipContent>
                 </Tooltip>

@@ -294,10 +294,10 @@ export const projectsData: Project[] = [
         <li>Employed fabrication tools such as Water Jet Cutter and 3D Printer for robot development.</li>
       </ul>
     `,
-    imageUrl: "https://placehold.co/600x400.png",
-    imageAiHint: "robot hardware competition",
+    imageUrl: "/images/engphys-robot-front.jpg",
+    imageAiHint: "engineering physics robot competition",
     technologies: ["C++", "Microcontrollers (STM32)", "OnShape", "CAD", "3D Printing", "Robotics"],
-    detailsImageUrl: "https://placehold.co/300x400.png",
-    detailsImageAiHint: "custom robot design"
+    detailsImageUrl: "/images/engphys-robot-back.jpg",
+    detailsImageAiHint: "robot electronics and wiring"
   }
 ];

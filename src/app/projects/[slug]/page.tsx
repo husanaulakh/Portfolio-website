@@ -9,7 +9,7 @@ import { Separator } from '@/components/ui/separator';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 
 interface ProjectPageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
@@ -19,7 +19,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: ProjectPageProps) {
-  const project = projectsData.find((p) => p.slug === params.slug);
+  const { slug } = await params;
+  const project = projectsData.find((p) => p.slug === slug);
   if (!project) {
     return { title: 'Project Not Found' };
   }
@@ -29,8 +30,9 @@ export async function generateMetadata({ params }: ProjectPageProps) {
   };
 }
 
-export default function ProjectPage({ params }: ProjectPageProps) {
-  const project = projectsData.find((p) => p.slug === params.slug);
+export default async function ProjectPage({ params }: ProjectPageProps) {
+  const { slug } = await params;
+  const project = projectsData.find((p) => p.slug === slug);
 
   if (!project) {
     return (

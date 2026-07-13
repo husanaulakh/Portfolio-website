@@ -1,11 +1,9 @@
-
 import type { Metadata } from 'next';
 import { Inter, Playfair_Display } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import { NavigationBar } from '@/components/layout/NavigationBar';
-import { Toaster } from "@/components/ui/toaster";
-import SplineViewerScript from '@/components/SplineViewerScript';
+import { Toaster } from '@/components/ui/toaster';
 
 const inter = Inter({
   variable: '--font-inter',
@@ -21,16 +19,24 @@ const playfairDisplay = Playfair_Display({
 
 export const metadata: Metadata = {
   title: 'Husan Aulakh | Portfolio',
-  description: 'Portfolio of Husan Aulakh, Engineering Physics student at UBC, showcasing projects in AI, Robotics, and Software Development.',
+  description:
+    'Portfolio of Husan Aulakh, Engineering Physics student at UBC, showcasing projects in AI, Robotics, and Software Development.',
+  metadataBase: new URL('http://localhost:9002'),
+  robots: { index: true, follow: true },
+  openGraph: {
+    title: 'Husan Aulakh | Portfolio',
+    description: 'Projects and experience in AI, robotics, and software development.',
+    type: 'website',
+  },
 };
 
 export default function RootLayout({
   children,
 }: Readonly<{
- children: React.ReactNode;
+  children: React.ReactNode;
 }>) {
- return (
-    <html lang="en">
+  return (
+    <html lang='en'>
       <body
         className={cn(
           'min-h-screen bg-background font-sans antialiased text-foreground',
@@ -38,14 +44,16 @@ export default function RootLayout({
           playfairDisplay.variable
         )}
       >
-        <head>
- {/* Add the Spline viewer script here */}
- <SplineViewerScript />
- </head>
- <div className="relative flex min-h-screen flex-col">
+        <a href='#main-content' className='skip-link'>
+          Skip to main content
+        </a>
+        <div className='relative flex min-h-screen flex-col'>
           <NavigationBar />
-          <main className="flex-1 flex flex-col items-center pl-16"> {/* Add pl-16 for fixed sidebar */}
-            <div className="container mx-auto max-w-6xl w-full px-4 py-8">
+          <main
+            id='main-content'
+            className='flex flex-1 flex-col items-center px-4 pb-24 pt-6 md:px-6 md:pb-6 md:pl-20'
+          >
+            <div className='container mx-auto w-full max-w-6xl py-2 md:py-6'>
               {children}
             </div>
           </main>
@@ -55,4 +63,3 @@ export default function RootLayout({
     </html>
   );
 }
-
