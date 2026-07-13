@@ -1,52 +1,39 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 44 43% 92%; /* #F5F0E1 Warm Ivory */
-    --foreground: 15 5% 23%; /* #3E3A39 Rich Charcoal */
-
-    --card: 40 100% 99%; /* #FFFDF8 Lighter Ivory */
-    --card-foreground: 15 5% 23%; /* Rich Charcoal */
-
-    --popover: 40 100% 99%; /* Lighter Ivory */
-    --popover-foreground: 15 5% 23%; /* Rich Charcoal */
-
-    --primary: 13 46% 62%; /* #C98474 Terracotta */
-    --primary-foreground: 15 5% 23%; /* Rich Charcoal (for text on terracotta buttons) */
-
-    --secondary: 151 16% 49%; /* #6A8E7F Sage Green */
-    --secondary-foreground: 44 43% 96%; /* Very Light Ivory (for text on sage buttons) */
-
-    --muted: 44 30% 88%; /* Slightly darker ivory for muted backgrounds */
-    --muted-foreground: 15 5% 43%; /* Medium Charcoal for muted text */
-
-    --accent: 13 46% 62%; /* #C98474 Terracotta (same as primary for highlights) */
-    --accent-foreground: 15 5% 23%; /* Rich Charcoal (for text on terracotta accents) */
-
-    --destructive: 0 55% 50%; /* Muted Red (e.g., #CC5252) */
-    --destructive-foreground: 44 43% 96%; /* Very Light Ivory */
-
-    --border: 151 16% 49%; /* #6A8E7F Sage Green (for general borders, including cards) */
-    --input: 40 100% 98%; /* #FFFDF8 Lighter Ivory for input backgrounds, slightly off white */
-    --ring: 13 46% 62%; /* #C98474 Terracotta (for focus rings) */
-
+    --background: 44 43% 92%;
+    --foreground: 15 5% 23%;
+    --card: 40 100% 99%;
+    --card-foreground: 15 5% 23%;
+    --popover: 40 100% 99%;
+    --popover-foreground: 15 5% 23%;
+    --primary: 13 46% 62%;
+    --primary-foreground: 15 5% 23%;
+    --secondary: 151 16% 49%;
+    --secondary-foreground: 44 43% 96%;
+    --muted: 44 30% 88%;
+    --muted-foreground: 15 5% 43%;
+    --accent: 13 46% 62%;
+    --accent-foreground: 15 5% 23%;
+    --destructive: 0 55% 50%;
+    --destructive-foreground: 44 43% 96%;
+    --border: 151 16% 49%;
+    --input: 40 100% 98%;
+    --ring: 13 46% 62%;
     --radius: 0.5rem;
-
-    /* Sidebar specific colors - aligned with the new theme */
-    --sidebar-background: 44 43% 92%; /* Warm Ivory */
-    --sidebar-foreground: 15 5% 23%; /* Rich Charcoal */
-    --sidebar-primary: 13 46% 62%; /* Terracotta */
-    --sidebar-primary-foreground: 15 5% 23%; /* Rich Charcoal */
-    --sidebar-accent: 13 46% 62%; /* Terracotta */
-    --sidebar-accent-foreground: 15 5% 23%; /* Rich Charcoal */
-    --sidebar-border: 151 16% 65%; /* Lighter Sage for sidebar internal borders */
-    --sidebar-ring: 13 46% 62%; /* Terracotta */
+    --sidebar-background: 44 43% 92%;
+    --sidebar-foreground: 15 5% 23%;
+    --sidebar-primary: 13 46% 62%;
+    --sidebar-primary-foreground: 15 5% 23%;
+    --sidebar-accent: 13 46% 62%;
+    --sidebar-accent-foreground: 15 5% 23%;
+    --sidebar-border: 151 16% 65%;
+    --sidebar-ring: 13 46% 62%;
   }
 
-  /* The .dark class will now reflect the same light earth tones theme */
   .dark {
     --background: 44 43% 92%;
     --foreground: 15 5% 23%;
@@ -67,7 +54,6 @@
     --border: 151 16% 49%;
     --input: 40 100% 98%;
     --ring: 13 46% 62%;
-    
     --sidebar-background: 44 43% 92%;
     --sidebar-foreground: 15 5% 23%;
     --sidebar-primary: 13 46% 62%;
@@ -81,18 +67,65 @@
 
 @layer base {
   * {
-    @apply border-border; /* Default border color will be Sage Green */
+    @apply border-border;
   }
-  body {
-    @apply bg-background text-foreground; /* Warm Ivory bg, Rich Charcoal text */
-  }
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-serif text-foreground; /* Headings will use Rich Charcoal */
-  }
-  a {
-    @apply text-foreground hover:text-primary transition-colors; /* Charcoal links, hover to Terracotta */
-  }
+
   html {
     scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif text-foreground;
+  }
+
+  a {
+    @apply text-foreground transition-colors hover:text-primary;
+  }
+
+  :focus-visible {
+    outline: 3px solid hsl(var(--ring));
+    outline-offset: 3px;
+  }
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  z-index: 100;
+  border-radius: 0.5rem;
+  background: hsl(var(--card));
+  color: hsl(var(--foreground));
+  padding: 0.75rem 1rem;
+  transform: translateY(-200%);
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
   }
 }
