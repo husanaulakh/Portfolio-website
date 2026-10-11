@@ -12,10 +12,24 @@ interface WorkExperienceItem {
 
 const workExperienceData: WorkExperienceItem[] = [
    {
+    id: "work0",
+    company: "Amazon",
+    title: "Software Development Engineer",
+    dates: "Jul 2025 – Present",
+    summary: [
+      "Designed and rolled out a regression testing framework across 1000+ production pipelines, reducing pre/post-deployment regressions and improving change safety at scale.",
+      "Monitored and optimized workflows consuming 10B+ seconds of CPU time, improving observability and enabling early detection of performance regressions.",
+      "Led the design and delivery of a Datapath View Discovery Search platform, enabling engineers to discover and reuse existing business logic views.",
+      "Directly targeted cost and efficiency improvements within Datapath, one of Amazon's highest-cost infrastructure platforms.",
+      "Drove cross-team alignment on view metadata, ownership, and discoverability, improving long-term maintainability of Datapath services.",
+      "Developed distributed backend services on AWS (Bedrock, EC2, Lambda, DynamoDB, SQS, S3, Kendra, OpenSearch) with a focus on reliability, cost awareness, and operational simplicity.",
+    ],
+  },
+   {
     id: "work1",
     company: "TRIUMF Innovations Inc.",
     title: "Business Specialist",
-    dates: "April – Aug 2024",
+    dates: "Apr – Sep 2025",
     summary: [
       "Leading the creation of a comprehensive business plan for the Institute for Advanced Medical Isotopes (IAMI), aligning financial, operational, and market strategies with TRIUMF’s long-term objectives.",
       "Performing in-depth market research and competitive analysis to assess industry trends for IAMI.",
@@ -71,6 +85,24 @@ const workExperienceData: WorkExperienceItem[] = [
 
 const consolidatedWorkExperienceData = [
   {
+    company: "Amazon",
+    roles: [
+      {
+        id: "amazon-sde",
+        title: "Software Development Engineer",
+        dates: "Jul 2025 – Present",
+        summary: [
+          "Designed and rolled out a regression testing framework across 1000+ production pipelines, reducing pre/post-deployment regressions and improving change safety at scale.",
+          "Monitored and optimized workflows consuming 10B+ seconds of CPU time, improving observability and enabling early detection of performance regressions.",
+          "Led the design and delivery of a Datapath View Discovery Search platform, enabling engineers to discover and reuse existing business logic views.",
+          "Directly targeted cost and efficiency improvements within Datapath, one of Amazon's highest-cost infrastructure platforms.",
+          "Drove cross-team alignment on view metadata, ownership, and discoverability, improving long-term maintainability of Datapath services.",
+          "Developed distributed backend services on AWS (Bedrock, EC2, Lambda, DynamoDB, SQS, S3, Kendra, OpenSearch) with a focus on reliability, cost awareness, and operational simplicity.",
+        ],
+      },
+    ],
+  },
+  {
     company: "UBC Agrobot",
     roles: [
       {
@@ -93,7 +125,7 @@ const consolidatedWorkExperienceData = [
       {
         id: "work1",
         title: "Business Specialist",
-        dates: "Dec 2024 – Present",
+        dates: "Apr – Sep 2025",
         summary: [
           "Leading the creation of a comprehensive business plan for the Institute for Advanced Medical Isotopes (IAMI), aligning financial, operational, and market strategies with TRIUMF’s long-term objectives.",
           "Performing in-depth market research and competitive analysis to assess industry trends for IAMI.",
