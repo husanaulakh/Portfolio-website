@@ -21,12 +21,17 @@ export const metadata: Metadata = {
   title: 'Husan Aulakh | Portfolio',
   description:
     'Portfolio of Husan Aulakh, Engineering Physics student at UBC, showcasing projects in AI, Robotics, and Software Development.',
-  metadataBase: new URL('http://localhost:9002'),
+    metadataBase: new URL('http://localhost:9002'),
+  icons: {
+    icon: '/logo.svg',
+    apple: '/apple-icon.svg',
+  },
   robots: { index: true, follow: true },
   openGraph: {
     title: 'Husan Aulakh | Portfolio',
     description: 'Projects and experience in AI, robotics, and software development.',
     type: 'website',
+    images: ['/logo-full.svg'],
   },
 };
 

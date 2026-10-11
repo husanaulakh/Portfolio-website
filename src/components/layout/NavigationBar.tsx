@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
@@ -15,7 +16,14 @@ export function NavigationBar() {
         aria-label='Primary'
         className='fixed inset-x-0 bottom-0 z-50 border-t border-border/40 bg-background/95 p-2 shadow-lg backdrop-blur md:inset-y-0 md:left-0 md:right-auto md:h-full md:w-16 md:rounded-r-xl md:rounded-t-none md:border-r md:border-t-0 md:p-2'
       >
-        <ul className='flex items-center justify-around gap-1 md:flex-col md:justify-center md:gap-4 md:py-4'>
+        <Link
+          href='/'
+          aria-label='Husan Aulakh – home'
+          className='hidden shrink-0 items-center justify-center rounded-xl transition-transform hover:scale-105 focus-visible:scale-105 md:mx-auto md:mb-2 md:mt-2 md:flex md:h-11 md:w-11'
+        >
+          <Image src='/logo.svg' alt='' width={44} height={44} className='h-11 w-11 rounded-xl' priority />
+        </Link>
+        <ul className='flex flex-1 items-center justify-around gap-1 md:flex-col md:justify-center md:gap-4 md:py-4'>
           {NAV_LINKS.map((item) => {
             const isActive = pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href));
 
