@@ -17,11 +17,14 @@ const workExperienceData: WorkExperienceItem[] = [
     title: "Software Development Engineer",
     dates: "Jul 2025 – Present",
     summary: [
-      "Designed and rolled out a regression testing framework across 1000+ production pipelines, reducing pre/post-deployment regressions and improving change safety at scale.",
-      "Monitored and optimized workflows consuming 10B+ seconds of CPU time, improving observability and enabling early detection of performance regressions.",
-      "Led the design and delivery of a Datapath View Discovery Search platform, enabling engineers to discover and reuse existing business logic views.",
-      "Directly targeted cost and efficiency improvements within Datapath, one of Amazon's highest-cost infrastructure platforms.",
-      "Drove cross-team alignment on view metadata, ownership, and discoverability, improving long-term maintainability of Datapath services.",
+      "Supported an internal system that regulated pricing, product availability, and shipping for 300M+ users.",
+      "Developed testing tools used by 1,000+ engineering teams to test code changes before they reached customers.",
+      "Created an AI development framework that increased engineer output by 3x, which enabled the team to complete quarterly goals a month early.",
+      "Created onboarding resources and led new-hire training, which reduced ramp-up time from 8 weeks to 1 week.",
+      "Designed and rolled out a regression testing framework across 1,000+ production pipelines, which reduced pre/post-deployment regressions and improved change safety at scale.",
+      "Monitored and optimized workflows that consumed 10B+ seconds of CPU time, which improved observability and enabled early detection of performance regressions.",
+      "Led the design and delivery of a Datapath View Discovery Search platform, which enabled engineers to discover and reuse existing business logic views and drove cross-team alignment on view metadata, ownership, and discoverability.",
+      "Targeted cost and efficiency improvements within Datapath, one of Amazon's highest-cost infrastructure platforms.",
       "Developed distributed backend services on AWS (Bedrock, EC2, Lambda, DynamoDB, SQS, S3, Kendra, OpenSearch) with a focus on reliability, cost awareness, and operational simplicity.",
     ],
   },
@@ -31,43 +34,73 @@ const workExperienceData: WorkExperienceItem[] = [
     title: "Business Specialist",
     dates: "Apr – Sep 2025",
     summary: [
-      "Leading the creation of a comprehensive business plan for the Institute for Advanced Medical Isotopes (IAMI), aligning financial, operational, and market strategies with TRIUMF’s long-term objectives.",
-      "Performing in-depth market research and competitive analysis to assess industry trends for IAMI.",
-      "Defining key operational workflows, resource allocation, and execution timelines to ensure seamless implementation."
+      "Worked directly with TRIUMF Innovations' CEO to lead research and business planning for the Institute for Advanced Medical Isotopes, a state-of-the-art research facility for medical-isotope and radiopharmaceutical research.",
+      "Developed a comprehensive business plan by conducting market research, predicting costs, and identifying operational needs.",
+      "Consulted with technical and business stakeholders, which ensured diverse perspectives were consolidated into a practical launch plan."
     ],
   },
   {
     id: "work2",
     company: "Novarc Technologies",
     title: "Machine Learning Developer Intern",
-    dates: "April – Aug 2024",
+    dates: "Apr – Aug 2024",
     summary: [
-      "Fine-tuned state-of-the-art vision models like DINO and SegFormer for welding tasks, enhancing detection and segmentation accuracy by 15%.",
-      "Improved model convergence and achieved 95% accuracy through hyper-parameter tuning using Weights and Biases sweeps.",
-      "Experimented with Segment Anything Model 2 (SAMv2) architecture, exploring modifications to generate robust embeddings, leading to better feature extraction."
+      "Designed computer-vision models (DINO, SegFormer) to ensure consistent welding joints for welding robots.",
+      "Collaborated with welders and robotics engineers to identify points of failure during real-world robot use and increased model accuracy from 70% to 92%.",
+      "Tuned hyperparameters with Weights and Biases sweeps, which improved model convergence and accuracy.",
+      "Architected reusable training and testing workflows, which reduced development time by 40%.",
+      "Evaluated the Segment Anything Model 2 (SAMv2) architecture and presented recommendations to leadership to guide future development."
     ],
   },
   {
     id: "work3",
     company: "Cyberium Group",
     title: "Software Engineer Intern",
-    dates: "Sept – Dec 2023",
+    dates: "Sep – Dec 2023",
     summary: [
-      "Led the design and implementation of an AI application leveraging GPT-4 API and LLM-based NLP models to automate company cybersecurity compliance audits (ISO 27001) with 91% accuracy, reducing manual review time by 90%.",
-      "Built and deployed containerized Flask backend and React frontend on Azure, allowing real-time analytics.",
-      "Integrated PostgreSQL for robust data storage & query performance across compliance datasets.",
-      "Designed interactive, user-centric dashboards visualizing compliance results, adopted internally for company assessments.",
+      "Owned the design and implementation of an AI-powered client-facing tool that automated cybersecurity compliance audits (ISO 27001) with 91% accuracy and reduced manual review time by 90%.",
+      "Built and deployed a containerized Flask backend and React frontend on Azure, which enabled real-time analytics.",
+      "Integrated PostgreSQL for robust data storage and query performance across compliance datasets, which improved lookup time by 40%.",
+      "Interviewed clients to gather their needs and translated them into product decisions.",
+      "Facilitated weekly meetings to present progress, gather feedback, and align priorities.",
+      "Designed interactive, user-centric dashboards that visualized compliance results and improved user experience, which were adopted internally for company assessments."
     ],
   },
   {
     id: "work4",
     company: "Centre for Heart Lung Innovation",
     title: "Data Science Intern",
-    dates: "May – Sept 2023",
+    dates: "May – Sep 2023",
     summary: [
-      "Performed differential expression analysis using Python and R on over 62,000 gene expressions, identifying significant variations and extracting insights from a dataset of 24 unique samples",
-      "Created a Docker container for EagleImp software to enhance genotyping workflow efficiency by 85%.",
-      "Developed an RNA-sequencing pipeline using portable Bash scripts on a high-performance computing cluster at UBC ARC Sockeye, reducing processing times by 30%."
+      "Investigated genetic heart disease with patient-specific, stem cell-derived heart tissue to better understand disease mechanisms and treatment approaches.",
+      "Performed differential expression analysis with Python and R on 62,000+ gene expressions, which identified significant variations across 24 unique samples.",
+      "Created a Docker container for EagleImp software, which improved genotyping workflow efficiency by 85%.",
+      "Crafted a reproducible RNA-sequencing and data-analysis pipeline with portable Bash scripts on UBC ARC Sockeye, which reduced data-processing time by 30%.",
+      "Collaborated with researchers across biology, medicine, and engineering to interpret sequencing results and synthesized findings into a research poster that was presented to staff at the annual Centre for Heart Lung Innovation Research Day."
+    ],
+  },
+  {
+    id: "work6",
+    company: "Real Estate",
+    title: "BC Licensed Real Estate Representative",
+    dates: "2021 – Present",
+    summary: [
+      "Became certified as a BC Licensed Real Estate Representative to help newcomer families settle in Canada.",
+      "Worked with immigrant families to understand their unique circumstances and priorities and recommended suitable homes.",
+      "Prioritized each family's best interests and supported them in making informed decisions during a major life transition.",
+      "Ran workshops that explained the BC house-buying process and distributed relevant resources."
+    ],
+  },
+  {
+    id: "work7",
+    company: "Private Tutoring",
+    title: "Mathematics and Science Tutor",
+    dates: "2019 – Present",
+    summary: [
+      "Tutored 12 high school students in mathematics and science.",
+      "Tailored explanations to each student's base knowledge and learning style, which fostered curiosity and independent learning skills.",
+      "Developed digital tools that helped students limit distractions and increased studying efficiency.",
+      "Empowered young students to build confidence in material they had previously found intimidating."
     ],
   },
   {
@@ -76,9 +109,11 @@ const workExperienceData: WorkExperienceItem[] = [
     title: "Process and Performance Intern",
     dates: "Jan – Apr 2022",
     summary: [
-      "Automated prospective supplier data extraction using Python, processing over 500+ data files monthly.",
-      "Led a project that ensured the supplier’s compliance with WorkSafe BC, resulting in cost savings of $27 million.",
-      "Analyzed supplier performance and crafted industry benchmarking reports using Excel and Power BI."
+      "Consulted oil and gas suppliers to identify recurring challenges in Cenovus' intake and compliance process.",
+      "Used feedback to update and clarify compliance requirements, which shortened the process from 3 days to 1 day.",
+      "Automated the review of 500+ files with Python that contained supplier information each month.",
+      "Analyzed supplier performance and crafted industry benchmarking reports with Excel and Power BI.",
+      "Led a review of WorkSafeBC compliance that identified a significant cost issue and contributed to $27M in savings."
     ],
   }
 ];
@@ -92,11 +127,14 @@ const consolidatedWorkExperienceData = [
         title: "Software Development Engineer",
         dates: "Jul 2025 – Present",
         summary: [
-          "Designed and rolled out a regression testing framework across 1000+ production pipelines, reducing pre/post-deployment regressions and improving change safety at scale.",
-          "Monitored and optimized workflows consuming 10B+ seconds of CPU time, improving observability and enabling early detection of performance regressions.",
-          "Led the design and delivery of a Datapath View Discovery Search platform, enabling engineers to discover and reuse existing business logic views.",
-          "Directly targeted cost and efficiency improvements within Datapath, one of Amazon's highest-cost infrastructure platforms.",
-          "Drove cross-team alignment on view metadata, ownership, and discoverability, improving long-term maintainability of Datapath services.",
+          "Supported an internal system that regulated pricing, product availability, and shipping for 300M+ users.",
+          "Developed testing tools used by 1,000+ engineering teams to test code changes before they reached customers.",
+          "Created an AI development framework that increased engineer output by 3x, which enabled the team to complete quarterly goals a month early.",
+          "Created onboarding resources and led new-hire training, which reduced ramp-up time from 8 weeks to 1 week.",
+          "Designed and rolled out a regression testing framework across 1,000+ production pipelines, which reduced pre/post-deployment regressions and improved change safety at scale.",
+          "Monitored and optimized workflows that consumed 10B+ seconds of CPU time, which improved observability and enabled early detection of performance regressions.",
+          "Led the design and delivery of a Datapath View Discovery Search platform, which enabled engineers to discover and reuse existing business logic views and drove cross-team alignment on view metadata, ownership, and discoverability.",
+          "Targeted cost and efficiency improvements within Datapath, one of Amazon's highest-cost infrastructure platforms.",
           "Developed distributed backend services on AWS (Bedrock, EC2, Lambda, DynamoDB, SQS, S3, Kendra, OpenSearch) with a focus on reliability, cost awareness, and operational simplicity.",
         ],
       },
@@ -109,7 +147,7 @@ const consolidatedWorkExperienceData = [
         id: "agrobot-ai-lead",
         title: "AI Lead",
         dates: "May 2024 – Present",
-        summary: ["Leading Agrobot’s Applied ML division of 20+ developers, managing 4 ongoing projects including weed detection, maize detection, blueberry picker and system architecture."],
+        summary: ["Led Agrobot's Applied ML division of 20+ developers and managed 4 ongoing projects that covered weed detection, maize detection, blueberry picker, and system architecture."],
       },
       {
         id: "agrobot-ml-engineer",
@@ -127,9 +165,9 @@ const consolidatedWorkExperienceData = [
         title: "Business Specialist",
         dates: "Apr – Sep 2025",
         summary: [
-          "Leading the creation of a comprehensive business plan for the Institute for Advanced Medical Isotopes (IAMI), aligning financial, operational, and market strategies with TRIUMF’s long-term objectives.",
-          "Performing in-depth market research and competitive analysis to assess industry trends for IAMI.",
-          "Defining key operational workflows, resource allocation, and execution timelines to ensure seamless implementation."
+          "Worked directly with TRIUMF Innovations' CEO to lead research and business planning for the Institute for Advanced Medical Isotopes, a state-of-the-art research facility for medical-isotope and radiopharmaceutical research.",
+          "Developed a comprehensive business plan by conducting market research, predicting costs, and identifying operational needs.",
+          "Consulted with technical and business stakeholders, which ensured diverse perspectives were consolidated into a practical launch plan.",
         ],
       },
     ],
@@ -142,9 +180,11 @@ const consolidatedWorkExperienceData = [
         title: "Machine Learning Developer Intern",
         dates: "Apr – Aug 2024",
         summary: [
-          "Fine-tuned state-of-the-art vision models (DINO and SegFormer) for specific welding tasks, increasing detection and segmentation accuracy from 70% to 92%",
-          "Improved DINO model convergence and accuracy to 93% via hyper-parameter tuning using Weights and Biases sweeps.",
-          "Experimented with Segment Anything Model 2 (SAMv2) architecture, exploring modifications to generate robust embeddings, leading to better feature extraction."
+          "Designed computer-vision models (DINO, SegFormer) to ensure consistent welding joints for welding robots.",
+          "Collaborated with welders and robotics engineers to identify points of failure during real-world robot use and increased model accuracy from 70% to 92%.",
+          "Tuned hyperparameters with Weights and Biases sweeps, which improved model convergence and accuracy.",
+          "Architected reusable training and testing workflows, which reduced development time by 40%.",
+          "Evaluated the Segment Anything Model 2 (SAMv2) architecture and presented recommendations to leadership to guide future development.",
         ],
       },
     ],
@@ -157,10 +197,12 @@ const consolidatedWorkExperienceData = [
         title: "Software Engineer Intern",
         dates: "Sep – Dec 2023",
         summary: [
-          "Led the design and implementation of an AI application leveraging GPT-4 API and LLM-based NLP models to automate company cybersecurity compliance audits (ISO 27001) with 91% accuracy, reducing manual review time by 90%.",
-          "Built and deployed containerized Flask backend and React frontend on Azure, allowing real-time analytics.",
-          "Integrated PostgreSQL for data storage & query performance across compliance datasets, improving lookup time by 40%.",
-          "Designed interactive, user-centric dashboards visualizing compliance results, adopted internally for company assessments.",
+          "Owned the design and implementation of an AI-powered client-facing tool that automated cybersecurity compliance audits (ISO 27001) with 91% accuracy and reduced manual review time by 90%.",
+          "Built and deployed a containerized Flask backend and React frontend on Azure, which enabled real-time analytics.",
+          "Integrated PostgreSQL for robust data storage and query performance across compliance datasets, which improved lookup time by 40%.",
+          "Interviewed clients to gather their needs and translated them into product decisions.",
+          "Facilitated weekly meetings to present progress, gather feedback, and align priorities.",
+          "Designed interactive, user-centric dashboards that visualized compliance results and improved user experience, which were adopted internally for company assessments.",
         ],
       },
     ],
@@ -173,9 +215,43 @@ const consolidatedWorkExperienceData = [
         title: "Data Science Intern",
         dates: "May – Sep 2023",
         summary: [
-          "Performed differential expression analysis using Python and R on over 62,000 gene expressions, identifying significant variations and extracting insights from a dataset of 24 unique samples",
-          "Created a Docker container for EagleImp software to enhance genotyping workflow efficiency by 85%.",
-          "Developed an RNA-sequencing pipeline using portable Bash scripts on a high-performance computing cluster at UBC ARC Sockeye, reducing processing times by 30%."
+          "Investigated genetic heart disease with patient-specific, stem cell-derived heart tissue to better understand disease mechanisms and treatment approaches.",
+          "Performed differential expression analysis with Python and R on 62,000+ gene expressions, which identified significant variations across 24 unique samples.",
+          "Created a Docker container for EagleImp software, which improved genotyping workflow efficiency by 85%.",
+          "Crafted a reproducible RNA-sequencing and data-analysis pipeline with portable Bash scripts on UBC ARC Sockeye, which reduced data-processing time by 30%.",
+          "Collaborated with researchers across biology, medicine, and engineering to interpret sequencing results and synthesized findings into a research poster that was presented to staff at the annual Centre for Heart Lung Innovation Research Day.",
+        ],
+      },
+    ],
+  },
+  {
+    company: "Real Estate",
+    roles: [
+      {
+        id: "work6",
+        title: "BC Licensed Real Estate Representative",
+        dates: "2021 – Present",
+        summary: [
+          "Became certified as a BC Licensed Real Estate Representative to help newcomer families settle in Canada.",
+          "Worked with immigrant families to understand their unique circumstances and priorities and recommended suitable homes.",
+          "Prioritized each family's best interests and supported them in making informed decisions during a major life transition.",
+          "Ran workshops that explained the BC house-buying process and distributed relevant resources.",
+        ],
+      },
+    ],
+  },
+  {
+    company: "Private Tutoring",
+    roles: [
+      {
+        id: "work7",
+        title: "Mathematics and Science Tutor",
+        dates: "2019 – Present",
+        summary: [
+          "Tutored 12 high school students in mathematics and science.",
+          "Tailored explanations to each student's base knowledge and learning style, which fostered curiosity and independent learning skills.",
+          "Developed digital tools that helped students limit distractions and increased studying efficiency.",
+          "Empowered young students to build confidence in material they had previously found intimidating.",
         ],
       },
     ],
@@ -188,9 +264,11 @@ const consolidatedWorkExperienceData = [
         title: "Process and Performance Intern",
         dates: "Jan – Apr 2022",
         summary: [
-          "Automated prospective supplier data extraction using Python, processing over 500+ data files monthly.",
-          "Led a project that ensured the supplier’s compliance with WorkSafe BC, resulting in cost savings of $27 million.",
-          "Analyzed supplier performance and crafted industry benchmarking reports using Excel and Power BI."
+          "Consulted oil and gas suppliers to identify recurring challenges in Cenovus' intake and compliance process.",
+          "Used feedback to update and clarify compliance requirements, which shortened the process from 3 days to 1 day.",
+          "Automated the review of 500+ files with Python that contained supplier information each month.",
+          "Analyzed supplier performance and crafted industry benchmarking reports with Excel and Power BI.",
+          "Led a review of WorkSafeBC compliance that identified a significant cost issue and contributed to $27M in savings.",
         ],
       },
     ],

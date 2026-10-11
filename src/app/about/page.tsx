@@ -8,10 +8,24 @@ import EducationTimeline from '@/components/about/EducationTimeline';
 
 const nonTechnicalExperience = [
   {
+    id: 'agrobot-mentor',
+    title: 'AI Lead Mentor – UBC Agrobot',
+    date: 'Sep 2023 – Present',
+    description: 'Led 23 students to develop machine-learning models for an agriculture robot that identified and treated maize under field conditions. Created a comprehensive learning document that introduced new team members to relevant machine-learning tools and best practices. Implemented weekly Learning Hours that encouraged team members to share progress, experience, and resources with each other. Mentored 7 members by sharing technical expertise and guidance in best engineering practices, one of whom later became the Agrobot Captain.',
+    icon: Users,
+  },
+  {
+    id: 'og-tutor',
+    title: 'Volunteer Tutor – Orton-Gillingham Literacy Program',
+    date: '2023 – Present',
+    description: 'Completed a 6-week specialized Orton-Gillingham training to tutor children with dyslexia across BC. Recognized barriers in delivering structured literacy instruction remotely and built novel technical tools that made reading and writing drills effective over Zoom. Advocated for greater awareness and access to literacy support by appearing in a public-awareness campaign that demonstrated tutoring methods and recruited new volunteers, which was featured on Global News and reached millions of people across Canada and the US.',
+    icon: Users,
+  },
+  {
     id: 'vpsub',
     title: 'Member – UBC Vice-Provost Revenue Diversification Subcommittee - New Ventures',
     date: 'Jan – Apr 2025',
-    description: 'Participating in a sub-committee with a mandate to brainstorm and research the viability of alternative revenue channels for the University. The New Ventures Subcommittee is responsible for making researched recommendations of possible entrepreneurial opportunities for the university.',
+    description: 'Selected as one of 7 students on a subcommittee that assessed opportunities for financially diversifying UBC revenue streams. Identified solar generation and the UBC ARC Sockeye computing cluster as potential revenue opportunities. Conducted market research and estimated costs, capacity, and potential for financial return. Presented recommendations to the Vice-Provost Revenue Diversification Committee, which selected the proposals for further exploration.',
     icon: Users,
   },
   {
@@ -21,7 +35,7 @@ const nonTechnicalExperience = [
     icon: Users,
     jsx: (
       <span>
-        Coordinated setup and logistics for the{' '}
+        Volunteered with the AMS Sexual Assault Support Centre to facilitate a Healthier Masculinities Discussion Circle. Supported a group of 24 male-identifying university students through conversations about masculinity, relationships, and the prevention of sexual violence, while promoting a safe and open environment. Led informational sessions on sexual violence for UBC fraternity members, guided participants through sensitive topics, encouraged reflection, and increased awareness about consent and sexual violence on campus. Coordinated setup and logistics for the{' '}
         <a
           href="https://www.amssasc.ca/education/healthier-masculinities/"
           target="_blank"
@@ -43,9 +57,9 @@ const nonTechnicalExperience = [
   },
   {
     id: 'bethany',
-    title: 'Meal-Time Companion – Bethany Senior Living',
+    title: 'Companion Volunteer – Long-Term Care Facility',
     date: 'Mar 2018 – Apr 2021',
-    description: 'Spent time with elderly residents during meal times, helping with feeding, chatting, and simply being present. It was a small role that made a big impact, and taught me the value of patience, empathy, and connection.',
+    description: 'Supported 60 seniors with advanced dementia in a long-term care facility. Accompanied residents to meals, assisted with feeding, and facilitated group activities that promoted social interaction and companionship. Worked alongside nursing staff, support workers, and volunteers and incorporated creative modes of communication, like gestures, pictures, and other visual prompts, for residents who were non-verbal or had limited English proficiency. Spent time with elderly residents during meal times, helping with feeding, chatting, and simply being present.',
     icon: Users,
   },
 ];
