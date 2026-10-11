@@ -13,6 +13,7 @@ const contactSchema = z.object({
 });
 
 const recipient = process.env.CONTACT_EMAIL_RECIPIENT ?? 'husanaulakh5@gmail.com';
+const sender = process.env.CONTACT_EMAIL_SENDER ?? 'Portfolio Contact <onboarding@resend.dev>';
 
 export async function POST(request: NextRequest) {
   try {
@@ -58,7 +59,7 @@ export async function POST(request: NextRequest) {
     const safeMessage = escapeHtml(message).replace(/\n/g, '<br />');
     const resend = new Resend(apiKey);
     const result = await resend.emails.send({
-      from: 'Portfolio Contact <onboarding@resend.dev>',
+      from: sender,
       to: recipient,
       replyTo: email,
       subject: 'New Portfolio Contact from ' + name,

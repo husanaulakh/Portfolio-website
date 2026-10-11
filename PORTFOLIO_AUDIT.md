@@ -572,3 +572,8 @@ The Resend email now includes:
 
 - Restarted the development server as a detached WSL process under Node 24.18.0.
 - Confirmed http://localhost:9002 responds with HTTP 200 after the shell exits.
+
+
+## Configuration documentation correction
+
+The README documented CONTACT_EMAIL_SENDER while the route hardcoded the sender. The route now reads CONTACT_EMAIL_SENDER with the Resend onboarding sender as a fallback, and the local environment includes the configured sender.
