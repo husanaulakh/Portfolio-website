@@ -32,7 +32,7 @@ const workExperienceData: WorkExperienceItem[] = [
     id: "work1",
     company: "TRIUMF Innovations Inc.",
     title: "Business Specialist",
-    dates: "Apr – Sep 2025",
+    dates: "Dec 2024 – Sep 2025",
     summary: [
       "Worked directly with TRIUMF Innovations' CEO to lead research and business planning for the Institute for Advanced Medical Isotopes, a state-of-the-art research facility for medical-isotope and radiopharmaceutical research.",
       "Developed a comprehensive business plan by conducting market research, predicting costs, and identifying operational needs.",
@@ -163,7 +163,7 @@ const consolidatedWorkExperienceData = [
       {
         id: "work1",
         title: "Business Specialist",
-        dates: "Apr – Sep 2025",
+        dates: "Dec 2024 – Sep 2025",
         summary: [
           "Worked directly with TRIUMF Innovations' CEO to lead research and business planning for the Institute for Advanced Medical Isotopes, a state-of-the-art research facility for medical-isotope and radiopharmaceutical research.",
           "Developed a comprehensive business plan by conducting market research, predicting costs, and identifying operational needs.",

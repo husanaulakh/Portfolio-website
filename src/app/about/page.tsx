@@ -11,21 +11,35 @@ const nonTechnicalExperience = [
     id: 'agrobot-mentor',
     title: 'AI Lead Mentor – UBC Agrobot',
     date: 'Sep 2023 – Present',
-    description: 'Led 23 students to develop machine-learning models for an agriculture robot that identified and treated maize under field conditions. Created a comprehensive learning document that introduced new team members to relevant machine-learning tools and best practices. Implemented weekly Learning Hours that encouraged team members to share progress, experience, and resources with each other. Mentored 7 members by sharing technical expertise and guidance in best engineering practices, one of whom later became the Agrobot Captain.',
+    points: [
+      'Led 23 students to develop machine-learning models for an agriculture robot that identified and treated maize under field conditions.',
+      'Created a comprehensive learning document that introduced new team members to relevant machine-learning tools and best practices.',
+      'Implemented weekly Learning Hours that encouraged team members to share progress, experience, and resources with each other.',
+      'Mentored 7 members by sharing technical expertise and guidance in best engineering practices, one of whom later became the Agrobot Captain.',
+    ],
     icon: Users,
   },
   {
     id: 'og-tutor',
     title: 'Volunteer Tutor – Orton-Gillingham Literacy Program',
     date: '2023 – Present',
-    description: 'Completed a 6-week specialized Orton-Gillingham training to tutor children with dyslexia across BC. Recognized barriers in delivering structured literacy instruction remotely and built novel technical tools that made reading and writing drills effective over Zoom. Advocated for greater awareness and access to literacy support by appearing in a public-awareness campaign that demonstrated tutoring methods and recruited new volunteers, which was featured on Global News and reached millions of people across Canada and the US.',
+    points: [
+      'Completed a 6-week specialized Orton-Gillingham training to tutor children with dyslexia across BC.',
+      'Recognized barriers in delivering structured literacy instruction remotely and built novel technical tools that made reading and writing drills effective over Zoom.',
+      'Advocated for greater awareness and access to literacy support by appearing in a public-awareness campaign that demonstrated tutoring methods and recruited new volunteers, which was featured on Global News and reached millions of people across Canada and the US.',
+    ],
     icon: Users,
   },
   {
     id: 'vpsub',
     title: 'Member – UBC Vice-Provost Revenue Diversification Subcommittee - New Ventures',
     date: 'Jan – Apr 2025',
-    description: 'Selected as one of 7 students on a subcommittee that assessed opportunities for financially diversifying UBC revenue streams. Identified solar generation and the UBC ARC Sockeye computing cluster as potential revenue opportunities. Conducted market research and estimated costs, capacity, and potential for financial return. Presented recommendations to the Vice-Provost Revenue Diversification Committee, which selected the proposals for further exploration.',
+    points: [
+      'Selected as one of 7 students on a subcommittee that assessed opportunities for financially diversifying UBC revenue streams.',
+      'Identified solar generation and the UBC ARC Sockeye computing cluster as potential revenue opportunities.',
+      'Conducted market research and estimated costs, capacity, and potential for financial return.',
+      'Presented recommendations to the Vice-Provost Revenue Diversification Committee, which selected the proposals for further exploration.',
+    ],
     icon: Users,
   },
   {
@@ -33,33 +47,37 @@ const nonTechnicalExperience = [
     title: 'Volunteer – Healthier Masculinities, AMS Sexual Assault Support Centre',
     date: 'Sep 2024 – Apr 2025',
     icon: Users,
-    jsx: (
-      <span>
-        Volunteered with the AMS Sexual Assault Support Centre to facilitate a Healthier Masculinities Discussion Circle. Supported a group of 24 male-identifying university students through conversations about masculinity, relationships, and the prevention of sexual violence, while promoting a safe and open environment. Led informational sessions on sexual violence for UBC fraternity members, guided participants through sensitive topics, encouraged reflection, and increased awareness about consent and sexual violence on campus. Coordinated setup and logistics for the{' '}
-        <a
-          href="https://www.amssasc.ca/education/healthier-masculinities/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-primary underline hover:text-primary/80"
-        >
-          Healthier Masculinities initiative
-        </a>
-        , promoting open, respectful dialogue around healthy gender expression, accountability, and consent. Co-facilitated a workshop with UBC fraternities on understanding sexual violence, harassment, and how to build safer communities. Actively supported participant engagement, helping foster inclusive and honest conversations.
-      </span>
-    ),
+    points: [
+      'Volunteered with the AMS Sexual Assault Support Centre to facilitate a Healthier Masculinities Discussion Circle.',
+      'Supported a group of 24 male-identifying university students through conversations about masculinity, relationships, and the prevention of sexual violence, while promoting a safe and open environment.',
+      'Led informational sessions on sexual violence for UBC fraternity members, guided participants through sensitive topics, encouraged reflection, and increased awareness about consent and sexual violence on campus.',
+    ],
+    link: {
+      href: 'https://www.amssasc.ca/education/healthier-masculinities/',
+      label: 'Healthier Masculinities initiative',
+    },
+    linkPrefix: 'Coordinated setup and logistics for the',
+    linkSuffix: ', promoting open, respectful dialogue around healthy gender expression, accountability, and consent. Co-facilitated a workshop with UBC fraternities on understanding sexual violence, harassment, and how to build safer communities. Actively supported participant engagement, helping foster inclusive and honest conversations.',
   },
   {
     id: 'epcouncil',
     title: '3rd Year Representative – UBC Engineering Physics Council',
     date: 'Sep 2022 – Apr 2023',
-    description: 'Represented third-year students, communicated their needs, and played a key role in organizing student-focused events. Collaborated with faculty and peers to enhance academic and social experiences.',
+    points: [
+      'Represented third-year students, communicated their needs, and played a key role in organizing student-focused events.',
+      'Collaborated with faculty and peers to enhance academic and social experiences.',
+    ],
     icon: Users,
   },
   {
     id: 'bethany',
     title: 'Companion Volunteer – Long-Term Care Facility',
     date: 'Mar 2018 – Apr 2021',
-    description: 'Supported 60 seniors with advanced dementia in a long-term care facility. Accompanied residents to meals, assisted with feeding, and facilitated group activities that promoted social interaction and companionship. Worked alongside nursing staff, support workers, and volunteers and incorporated creative modes of communication, like gestures, pictures, and other visual prompts, for residents who were non-verbal or had limited English proficiency. Spent time with elderly residents during meal times, helping with feeding, chatting, and simply being present.',
+    points: [
+      'Supported 60 seniors with advanced dementia in a long-term care facility.',
+      'Accompanied residents to meals, assisted with feeding, and facilitated group activities that promoted social interaction and companionship.',
+      'Worked alongside nursing staff, support workers, and volunteers and incorporated creative modes of communication, like gestures, pictures, and other visual prompts, for residents who were non-verbal or had limited English proficiency.',
+    ],
     icon: Users,
   },
 ];
@@ -164,7 +182,28 @@ export default function AboutPage() {
                 <CardDescription className="text-sm text-muted-foreground pt-1">{item.date}</CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-foreground/80"> {'jsx' in item ? item.jsx : item.description}</p>
+                <ul className="space-y-2.5">
+                  {'points' in item && item.points.map((point, index) => (
+                    <li key={index} className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-primary mr-2.5 mt-0.5 flex-shrink-0" />
+                      <span className="text-foreground/80">{point}</span>
+                    </li>
+                  ))}
+                </ul>
+                {'link' in item && item.link && (
+                  <p className="text-foreground/80 mt-2.5">
+                    {item.linkPrefix}{' '}
+                    <a
+                      href={item.link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary underline hover:text-primary/80"
+                    >
+                      {item.link.label}
+                    </a>
+                    {item.linkSuffix}
+                  </p>
+                )}
               </CardContent>
             </Card>
           ))}
