@@ -1,5 +1,6 @@
 
 import { projectsData } from '@/data/projects';
+import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -34,19 +35,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   const { slug } = await params;
   const project = projectsData.find((p) => p.slug === slug);
 
-  if (!project) {
-    return (
-      <div className="text-center py-12">
-        <h1 className="font-serif text-4xl font-bold mb-4">Project Not Found</h1>
-        <p className="text-muted-foreground mb-8">The project you are looking for does not exist.</p>
-        <Button asChild variant="outline" className="border-primary text-primary hover:bg-primary/10 hover:text-primary-foreground">
-          <Link href="/projects">
-            <ArrowLeft className="mr-2 h-4 w-4" /> Back to Projects
-          </Link>
-        </Button>
-      </div>
-    );
-  }
+  if (!project) notFound();
 
   return (
     <div className="space-y-10 py-8">
@@ -74,7 +63,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       </div>
 
       <div className="grid lg:grid-cols-3 gap-8 items-start">
-        <main className="lg:col-span-2 space-y-6">
+        <section aria-label="Project overview" className="lg:col-span-2 space-y-6">
           <Card className="bg-card shadow-md">
             <CardHeader>
               <CardTitle className="font-serif text-3xl text-primary">Project Overview</CardTitle>
@@ -86,7 +75,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               />
             </CardContent>
           </Card>
-        </main>
+        </section>
 
         <aside className="lg:col-span-1 space-y-6 lg:sticky lg:top-24">
           <Card className="bg-card shadow-md">

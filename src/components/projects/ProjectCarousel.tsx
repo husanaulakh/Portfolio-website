@@ -16,7 +16,6 @@ interface ProjectCarouselProps {
 
 export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
   const [currentIndex, setCurrentIndex] = React.useState(0);
-  const carouselRef = React.useRef<HTMLDivElement>(null);
   const touchStartX = React.useRef(0);
 
   const prevProject = React.useCallback(() => {
@@ -30,27 +29,6 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
       prevIndex === projects.length - 1 ? 0 : prevIndex + 1
     );
   }, [projects.length]);
-
-  React.useEffect(() => {
-    if (carouselRef.current) {
-      const itemWidth = carouselRef.current.parentElement?.clientWidth || 0;
-      carouselRef.current.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
-    }
-  }, [currentIndex, projects]);
-  
-  React.useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'ArrowLeft') {
-        prevProject();
-      } else if (event.key === 'ArrowRight') {
-        nextProject();
-      }
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-    };
-  }, [prevProject, nextProject]);
 
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX;
@@ -75,14 +53,19 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
       className="relative w-full max-w-2xl mx-auto overflow-hidden"
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
+      tabIndex={0}
+      onKeyDown={(event) => {
+        if (event.key === "ArrowLeft") { event.preventDefault(); prevProject(); }
+        if (event.key === "ArrowRight") { event.preventDefault(); nextProject(); }
+      }}
       role="region"
       aria-roledescription="carousel"
       aria-label="Featured Projects"
     >
       <div
-        ref={carouselRef}
+        aria-live="polite"
         className="flex transition-transform duration-500 ease-in-out"
-        style={{ width: `${projects.length * 100}%` }} 
+        style={{ width: `${projects.length * 100}%`, transform: `translateX(-${currentIndex * (100 / projects.length)}%)` }} 
       >
         {projects.map((project) => (
           <div key={project.slug} className="w-full flex-shrink-0" style={{ width: `${100 / projects.length}%`}}>
