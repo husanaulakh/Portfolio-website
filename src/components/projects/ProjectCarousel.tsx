@@ -78,7 +78,6 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
                         alt={`${project.title} preview`}
                         fill
                         
-                        data-ai-hint={project.imageAiHint || "product 3d device"}
                         sizes="(max-width: 768px) 100vw, 700px"
                         className="object-contain p-2 sm:p-4 group-hover:scale-105 transition-transform duration-300"
                         loading="lazy"
