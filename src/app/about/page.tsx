@@ -133,12 +133,12 @@ export default function AboutPage() {
                 <CardTitle className="font-serif text-3xl md:text-4xl text-primary">Husan Aulakh</CardTitle>
               </div>
                <CardDescription className="text-lg text-muted-foreground pt-2">
-                Engineering Physics Student | AI & Robotics Enthusiast
+                Engineering Physics Graduate | Software Engineering & Applied AI
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <p className="text-lg text-foreground/90">
-              Hey, I'm an Engineering Physics graduate at UBC and I love taking wild ideas and turning them into real, working things. Whether it's building robots, tinkering with AI, or programming my Roomba to dance, I'm all about learning by doing!
+              Hey, I'm an Engineering Physics graduate from UBC and I love taking wild ideas and turning them into real, working things. Whether it's building robots, tinkering with AI, or programming my Roomba to dance, I'm all about learning by doing!
               when I'm not coding or soldering, you'll find me reading, playing basketball, hiking a random mountain, or coming up with the next side project. I'm always up for new challenges, good company, and turning "what if?" into "look what I built!".
               </p>
               <div>

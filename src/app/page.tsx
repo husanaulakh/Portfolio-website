@@ -1,11 +1,15 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, Compass, Orbit } from 'lucide-react';
+import { ArrowRight, Compass, Orbit, Github, Linkedin } from 'lucide-react';
+import { projectsData } from '@/data/projects';
 import { Button } from '@/components/ui/button';
+
+const featuredSlugs = ['lexli-reading-tools', '3d-image-similarity-capstone', 'ml-simulated-robot-competition'];
+const featuredProjects = featuredSlugs.map(slug => projectsData.find(p => p.slug === slug)).filter((p): p is (typeof projectsData)[number] => Boolean(p));
 
 const signals = [
   { label: 'curiosity', value: 'always on' },
-  { label: 'current mode', value: 'building + learning' },
+  { label: 'current mode', value: 'building dependable systems' },
   { label: 'base', value: 'Vancouver, BC' },
 ];
 
@@ -18,20 +22,20 @@ export default function HomePage() {
           <div className="max-w-xl text-left">
             <p className="mb-5 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.24em] text-earth-secondary">
               <Orbit className="h-4 w-4" aria-hidden="true" />
-              A work in progress
+              Software Engineering · Applied AI · Robotics
             </p>
             <h1 className="font-serif text-5xl leading-[0.95] text-earth-text sm:text-6xl md:text-7xl">
               Husan <span className="italic text-primary">Aulakh</span>
             </h1>
             <p className="mt-7 max-w-md text-lg leading-relaxed text-earth-text/75">
-              Engineering Physics student, builder, and curious generalist. I like finding the thread between ambitious ideas and things that actually work.
+              Engineering Physics graduate and software engineer. I build reliable software and intelligent systems, from large-scale infrastructure at Amazon to applied computer vision for robots.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button asChild size="lg">
                 <Link href="/projects">Explore the work <ArrowRight className="ml-2 h-5 w-5" /></Link>
               </Button>
               <Button asChild variant="outline" size="lg">
-                <Link href="/about">Get the context</Link>
+                <Link href="/about">About me</Link>
               </Button>
             </div>
           </div>
@@ -56,14 +60,24 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section aria-labelledby="selected-work" className="space-y-6">
+        <div className="flex flex-wrap items-end justify-between gap-4"><h2 id="selected-work" className="font-serif text-4xl text-earth-text md:text-5xl">Selected engineering projects</h2><Link href="/projects" className="inline-flex items-center gap-2 underline underline-offset-4">All projects <ArrowRight className="h-4 w-4" aria-hidden="true" /></Link></div>
+        <div className="grid gap-5 md:grid-cols-3">{featuredProjects.map(project => (
+          <Link key={project.slug} href={`/projects/${project.slug}`} className="group overflow-hidden rounded-2xl border border-border/50 bg-card shadow-sm hover:shadow-md">
+            <div className="relative aspect-[4/3]"><Image src={project.imageUrl} alt="" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover" /></div>
+            <div className="space-y-2 p-5"><h3 className="font-serif text-2xl font-semibold">{project.title}</h3><p className="text-sm text-muted-foreground">{project.tagline}</p><span className="inline-flex items-center gap-1 text-sm font-semibold">View case study <ArrowRight className="h-4 w-4" aria-hidden="true" /></span></div>
+          </Link>
+        ))}</div>
+        <div className="flex flex-wrap gap-5 text-sm"><a className="inline-flex items-center gap-1 underline" href="https://github.com/husanaulakh" target="_blank" rel="noopener noreferrer"><Github className="h-4 w-4" aria-hidden="true" />GitHub</a><a className="inline-flex items-center gap-1 underline" href="https://www.linkedin.com/in/husan-aulakh/" target="_blank" rel="noopener noreferrer"><Linkedin className="h-4 w-4" aria-hidden="true" />LinkedIn</a><a className="underline" href="mailto:husanaulakh5@gmail.com?subject=Resume%20request">Request résumé</a></div>
+      </section>
       <section className="grid gap-8 md:grid-cols-[0.8fr_1.2fr] md:items-end">
         <div className="text-left">
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-earth-secondary">The short version</p>
-          <h2 className="font-serif text-4xl text-earth-text md:text-5xl">Ideas are better when they can leave the page.</h2>
+          <h2 className="font-serif text-4xl text-earth-text md:text-5xl">From prototypes to production.</h2>
         </div>
         <div className="flex items-start gap-4 text-left text-lg leading-relaxed text-muted-foreground">
           <Compass className="mt-1 h-6 w-6 shrink-0 text-primary" aria-hidden="true" />
-          <p>This is a living record of experiments across software, hardware, strategy, and the questions that connect them.</p>
+          <p>My work spans production software at Amazon, machine-learning systems for robotics, and hardware experiments. Explore the projects to see what I built and why.</p>
         </div>
       </section>
     </div>
