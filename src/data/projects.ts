@@ -129,6 +129,27 @@ export const projectsData: Project[] = [
   // },  
   
   {
+    slug: "lexli-reading-tools",
+    title: "Lexli — Dyslexia Tutoring Tools",
+    tagline: "Modular tutor-led reading activities with a reusable lesson builder.",
+    shortDescription: "Built web-based literacy activities for tutor-led Orton-Gillingham lessons, including activity selection, ordering, and lesson review.",
+    longDescription: `<p>Lexli provides browser-based tools for structured literacy tutoring. I built reusable activities and a lesson builder that helps tutors select concepts, prepare materials, and guide sessions.</p><h3>Engineering focus</h3><ul><li>Modular activity architecture and reusable lesson planning.</li><li>Accessible keyboard and touch interactions.</li><li>Offline-friendly static application design.</li></ul>`,
+    imageUrl: "/images/lexli-project.svg",
+    technologies: ["JavaScript", "HTML", "CSS", "Accessibility", "Frontend Architecture"],
+    repoUrl: "https://github.com/husanaulakh/dyslexia-tutoring-app",
+    liveUrl: "https://dyslexia-tutoring-app.vercel.app",
+  },
+  {
+    slug: "ubc-agrobot-vision",
+    title: "UBC Agrobot — Agricultural Computer Vision",
+    tagline: "Machine learning for agricultural robotics.",
+    shortDescription: "Developed maize-detection computer vision and supported real-time inference for a student agricultural robotics team.",
+    longDescription: `<p>At UBC Agrobot, I worked on visual perception for maize detection and the integration of machine-learning workflows into a robotics pipeline.</p><h3>Contribution</h3><ul><li>Object detection and model training for crop imagery.</li><li>Edge-device inference and C++ integration.</li><li>ML leadership, mentoring, and roadmap planning.</li></ul>`,
+    imageUrl: "/images/agrobot-project.svg",
+    technologies: ["Python", "Computer Vision", "YOLO", "C++", "Robotics"],
+    repoUrl: "https://github.com/husanaulakh/Agrobot",
+  },
+  {
     slug: "investment-memo-pu",
     title: "Investment Memo Project – Puter",
     tagline: "Built and presented an investment case that secured $25 000 in CDL funding.",
@@ -237,20 +258,21 @@ export const projectsData: Project[] = [
   },  
   {
     slug: "3d-image-similarity-capstone",
+    repoUrl: "https://github.com/husanaulakh/Capstone-3D-batches",
     title: "3D Image Similarity Capstone Project",
     tagline: "Developing a 3D model similarity detection system.",
     shortDescription: "Leveraging Python, Blender, and distributed computing (Ray, GCP) to process 3D models and fine-tune Recon++ for similarity detection, achieving a 12x improvement in processing time.",
     longDescription: `
-      <p>This ongoing capstone project focuses on building a system to detect similarities between complex 3D models. It involves a significant data processing pipeline and machine learning model fine-tuning.</p>
+      <p>This capstone project focused on building a system to detect similarities between complex 3D models. It involves a significant data processing pipeline and machine learning model fine-tuning.</p>
       <h3 class="text-xl font-semibold mt-4 mb-2 text-primary">Key Aspects:</h3>
       <ul class="list-disc list-inside space-y-1">
         <li>Utilized Python and Blender to inspect, process, and perform augmentations on complex 3D models.</li>
         <li>Implemented distributed rendering using Ray—a high-performance distributed execution framework.</li>
         <li>Deployed a scalable data pipeline on Google Cloud Platform (GCP) using virtual instances for parallel processing and containerized workflows.</li>
         <li>Enhanced the Blender processing workflow, reducing per-asset processing time from 6 minutes to 30 seconds (a 12x improvement), saving significant time and resources.</li>
-        <li>Currently fine-tuning the Recon++ model for detecting 3D image similarity, aiming to exceed 85% accuracy.</li>
+        <li>Explored fine-tuning the Recon++ model for detecting 3D image similarity, aiming to exceed 85% accuracy.</li>
       </ul>
-      <p>Project duration: Sep 2023 – Present.</p>
+      <p>Project completed as part of an engineering capstone.</p>
     `,
     imageUrl: "https://placehold.co/600x400.png",
     imageAiHint: "3d model abstract",
@@ -260,6 +282,7 @@ export const projectsData: Project[] = [
   },
   {
     slug: "ml-simulated-robot-competition",
+    repoUrl: "https://github.com/husanaulakh/ENPH-353-Competition-Team12",
     title: "Machine Learning Simulated Robot Competition",
     tagline: "Trained a robot for navigation and license plate recognition in Gazebo.",
     shortDescription: "Developed a robot using Python, Computer Vision, and Reinforcement Learning to navigate and capture license plates in a Gazebo ROS simulator, achieving 90% navigation and 96% character recognition accuracy.",

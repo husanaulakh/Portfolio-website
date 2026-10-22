@@ -307,7 +307,7 @@ export default function WorkExperienceAccordion() {
                      </p>
                    </div>
                    <ul className="space-y-3 text-foreground/90">
-                     {role.summary.map((point, pointIndex) => (
+                     {(companyEntry.company === "Amazon" ? role.summary.slice(0, 5) : role.summary).map((point, pointIndex) => (
                         <li key={pointIndex} className="flex items-start">
                            <CheckCircle className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
                            <span>{point}</span>

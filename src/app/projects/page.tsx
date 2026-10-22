@@ -9,14 +9,19 @@ import ProjectCarousel from '@/components/projects/ProjectCarousel';
 import { projectsData } from '@/data/projects';
 
 export default function ProjectsPage() {
-  const featuredProjects = projectsData.slice(0, 3); 
+  const featuredSlugs = ['lexli-reading-tools', '3d-image-similarity-capstone', 'ubc-agrobot-vision'];
+  const featuredProjects = featuredSlugs.map(slug => projectsData.find(p => p.slug === slug)).filter((p): p is (typeof projectsData)[number] => Boolean(p));
+  const orderedProjects = [...projectsData].sort((a, b) => {
+    const aRank = featuredSlugs.indexOf(a.slug), bRank = featuredSlugs.indexOf(b.slug);
+    return (aRank < 0 ? featuredSlugs.length : aRank) - (bRank < 0 ? featuredSlugs.length : bRank);
+  }); 
 
   return (
     <div className="space-y-12 py-8">
       <section className="text-center">
-        <h1 className="font-serif text-5xl font-bold mb-4">My Works</h1>
+        <h1 className="font-serif text-5xl font-bold mb-4">Projects</h1>
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-          A showcase of my diverse projects, demonstrating skills in software, hardware, and creative engineering.
+          Selected engineering, software, and venture projects, with details on the challenge, implementation, and results.
         </p>
       </section>
 
@@ -34,7 +39,7 @@ export default function ProjectsPage() {
       <section>
         <h2 className="font-serif text-4xl font-bold text-center mb-8">All Projects</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projectsData.map((project) => (
+          {orderedProjects.map((project) => (
             <Card key={project.slug} className="bg-card shadow-lg hover:shadow-md transition-all duration-300 flex flex-col overflow-hidden group">
               <CardHeader className="p-0">
                 <div className="relative w-full h-48 overflow-hidden">
