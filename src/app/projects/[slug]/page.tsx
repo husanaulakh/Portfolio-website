@@ -1,5 +1,6 @@
 
 import { projectsData } from '@/data/projects';
+import { siteUrl } from '@/lib/site-url';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -26,7 +27,9 @@ export async function generateMetadata({ params }: ProjectPageProps) {
     return { title: 'Project Not Found' };
   }
   return {
-    title: `${project.title} | Husan Aulakh Portfolio`,
+    title: project.title,
+    alternates: { canonical: `/projects/${project.slug}` },
+    openGraph: { title: project.title, description: project.tagline, url: `${siteUrl}/projects/${project.slug}`, images: [project.imageUrl] },
     description: project.tagline,
   };
 }
@@ -53,11 +56,12 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         <Image
           src={project.imageUrl || "https://placehold.co/1200x675.png"}
           alt={`${project.title} main image`}
-          layout="fill"
-          objectFit="contain"
+          fill
+          
           data-ai-hint={project.imageAiHint || "project showcase"}
           priority
-          className="group-hover:scale-105 transition-transform duration-300"
+          sizes="(max-width: 1024px) 100vw, 80vw"
+          className="object-contain group-hover:scale-105 transition-transform duration-300"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-earth-text/40 to-transparent"></div>
       </div>
@@ -125,10 +129,11 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                          <Image
                             src={project.detailsImageUrl}
                             alt="Project detail graphic"
-                            layout="fill"
-                            objectFit="contain"
+                            fill
+                            
                             data-ai-hint={project.detailsImageAiHint || "technical detail diagram"}
-                            className="p-2"
+                            sizes="(max-width: 1024px) 100vw, 33vw"
+                            className="object-contain p-2"
                           />
                     </div>
                 </CardContent>

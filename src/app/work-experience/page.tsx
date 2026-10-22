@@ -1,4 +1,7 @@
+import type { Metadata } from 'next';
 import WorkExperienceAccordion from '@/components/work-experience/WorkExperienceAccordion';
+
+export const metadata: Metadata = { title: 'Work Experience', description: 'Professional experience in software engineering, machine learning, and robotics.', alternates: { canonical: '/work-experience' } };
 import WorkHistoryEditor from '@/components/work-experience/WorkHistoryEditor';
 import { Separator } from '@/components/ui/separator';
 

@@ -274,10 +274,10 @@ export const projectsData: Project[] = [
       </ul>
       <p>Project completed as part of an engineering capstone.</p>
     `,
-    imageUrl: "https://placehold.co/600x400.png",
+    imageUrl: "/images/capstone-preview.svg",
     imageAiHint: "3d model abstract",
     technologies: ["Python", "Blender", "Ray", "GCP", "Docker", "Machine Learning", "3D Computer Vision", "Recon++"],
-    detailsImageUrl: "https://placehold.co/300x400.png",
+    detailsImageUrl: "/images/capstone-preview.svg",
     detailsImageAiHint: "3d model wireframe"
   },
   {
@@ -296,10 +296,10 @@ export const projectsData: Project[] = [
         <li>Developed Convolutional Neural Networks (CNNs) achieving 90% navigation accuracy and 96% character recognition accuracy.</li>
       </ul>
     `,
-    imageUrl: "https://placehold.co/600x400.png",
+    imageUrl: "/images/robot-simulator-preview.svg",
     imageAiHint: "robot simulation game",
     technologies: ["Python", "Computer Vision", "Reinforcement Learning", "Gazebo", "ROS", "CNNs", "TensorFlow"],
-    detailsImageUrl: "https://placehold.co/300x400.png",
+    detailsImageUrl: "/images/robot-simulator-preview.svg",
     detailsImageAiHint: "robot path algorithm"
   },
   {
