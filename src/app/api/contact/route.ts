@@ -8,15 +8,29 @@ const contactSchema = z.object({
   subject: z.string().trim().max(150, 'Subject is too long').optional(),
   message: z.string().trim().min(1, 'Message is required').max(2000, 'Message is too long'),
   honeypot: z.string().optional(),
-  turnstileToken: z.string().optional(),
   previewOnly: z.boolean().optional(),
 });
 
 const recipient = process.env.CONTACT_EMAIL_RECIPIENT ?? 'husanaulakh5@gmail.com';
 const sender = process.env.CONTACT_EMAIL_SENDER ?? 'Portfolio Contact <onboarding@resend.dev>';
 
+// Best-effort per-process protection. Use edge/provider rate limiting for multi-instance deployments.
+const attemptWindowMs = 10 * 60 * 1000;
+const attemptsPerWindow = 5;
+const attempts = new Map<string, { count: number; resetAt: number }>();
+
 export async function POST(request: NextRequest) {
   try {
+    const contentLength = Number(request.headers.get('content-length') ?? '0');
+    if (contentLength > 16_384) {
+      return NextResponse.json({ message: 'Request is too large.' }, { status: 413 });
+    }
+    const clientAddress = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ?? 'unknown';
+    const now = Date.now();
+    const entry = attempts.get(clientAddress);
+    if (entry && entry.resetAt > now && entry.count >= attemptsPerWindow) {
+      return NextResponse.json({ message: 'Too many messages. Please try again later.' }, { status: 429, headers: { 'Retry-After': String(Math.ceil((entry.resetAt - now) / 1000)) } });
+    }
     const body: unknown = await request.json();
 
     if (typeof body === 'object' && body !== null && 'honeypot' in body && body.honeypot) {
@@ -32,7 +46,10 @@ export async function POST(request: NextRequest) {
     }
 
     const { name, email, message, previewOnly } = parsed.data;
-    if (previewOnly && process.env.CONTACT_DEV_MODE === 'true') {
+    if (previewOnly) {
+      if (process.env.CONTACT_DEV_MODE !== 'true') {
+        return NextResponse.json({ message: 'Preview mode is unavailable.' }, { status: 403 });
+      }
       return NextResponse.json({ message: 'Preview mode: email was not sent.', preview: true });
     }
 
@@ -57,6 +74,13 @@ export async function POST(request: NextRequest) {
     const safeName = escapeHtml(name);
     const safeEmail = escapeHtml(email);
     const safeMessage = escapeHtml(message).replace(/\n/g, '<br />');
+    const current = attempts.get(clientAddress);
+    attempts.set(clientAddress, current && current.resetAt > now
+      ? { count: current.count + 1, resetAt: current.resetAt }
+      : { count: 1, resetAt: now + attemptWindowMs });
+    if (attempts.size > 2000) {
+      for (const [ip, record] of attempts) if (record.resetAt <= now) attempts.delete(ip);
+    }
     const resend = new Resend(apiKey);
     const result = await resend.emails.send({
       from: sender,

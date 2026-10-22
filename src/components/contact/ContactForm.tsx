@@ -62,15 +62,18 @@ export default function ContactForm() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...data, previewOnly }),
       });
-      const result: { message?: string } = await response.json().catch(() => ({}));
+      const result: { message?: string; preview?: boolean } = await response.json().catch(() => ({}));
 
       if (!response.ok) {
         throw new Error(result.message || "We could not send your message. Please try again.");
       }
 
+      if (previewOnly && result.preview !== true) {
+        throw new Error('Preview was not confirmed by the server.');
+      }
       toast({
-        title: previewOnly ? "Preview Complete" : "Message Sent!",
-        description: previewOnly
+        title: result.preview ? "Preview Complete" : "Message Sent!",
+        description: result.preview
           ? "Preview mode is on, so no email was sent."
           : "Thank you for reaching out. I'll get back to you soon.",
       });

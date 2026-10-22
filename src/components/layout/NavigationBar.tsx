@@ -36,12 +36,12 @@ export function NavigationBar() {
                       aria-label={item.label}
                       aria-current={isActive ? 'page' : undefined}
                       className={cn(
-                        'relative flex items-center justify-center rounded-lg px-3 py-3 text-muted-foreground transition-colors hover:bg-primary/10 hover:text-primary focus-visible:bg-primary/10 md:min-h-12 md:min-w-12',
+                        'relative flex min-h-12 flex-col items-center justify-center gap-1 rounded-lg px-1 py-2 text-muted-foreground md:flex-row md:gap-0 md:px-3 md:py-3 transition-colors hover:bg-primary/10 hover:text-primary focus-visible:bg-primary/10 md:min-h-12 md:min-w-12',
                         isActive && 'bg-primary/10 text-primary'
                       )}
                     >
                       <item.icon className='h-6 w-6' aria-hidden='true' />
-                      <span className='sr-only'>{item.label}</span>
+                      <span className="text-[10px] font-medium leading-tight md:sr-only">{item.label === "Work Experience" ? "Work" : item.label}</span>
                       {isActive && (
                         <span className='absolute bottom-0 left-1/2 h-1.5 w-6 -translate-x-1/2 rounded-t-full bg-primary shadow-sm shadow-primary/30 md:left-0 md:top-1/2 md:h-6 md:w-1.5 md:-translate-y-1/2 md:translate-x-0 md:rounded-r-full md:rounded-t-none' />
                       )}
