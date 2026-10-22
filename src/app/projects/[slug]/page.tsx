@@ -7,8 +7,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ArrowLeft, Github, ExternalLink } from 'lucide-react';
-import { Separator } from '@/components/ui/separator';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 interface ProjectPageProps {
   params: Promise<{ slug: string }>;
@@ -58,8 +57,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           alt={`${project.title} main image`}
           fill
           
-          data-ai-hint={project.imageAiHint || "project showcase"}
-          priority
+                    priority
           sizes="(max-width: 1024px) 100vw, 80vw"
           className="object-contain group-hover:scale-105 transition-transform duration-300"
         />
@@ -73,10 +71,14 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               <CardTitle className="font-serif text-3xl text-primary">Project Overview</CardTitle>
             </CardHeader>
             <CardContent>
-              <div
-                className="space-y-4 text-foreground/90 [&_h3]:font-serif [&_h3]:text-xl [&_h3]:font-semibold [&_h3]:mt-4 [&_h3]:mb-2 [&_h3]:text-primary [&_ul]:list-disc [&_ul]:list-inside [&_ul]:space-y-1 [&_p]:leading-relaxed"
-                dangerouslySetInnerHTML={{ __html: project.longDescription }}
-              />
+              <div className="space-y-4 text-foreground/90">
+                <p className="leading-relaxed">{project.overview}</p>
+                <h3 className="font-serif text-xl font-semibold text-primary">Key contributions</h3>
+                <ul className="list-outside list-disc space-y-2 pl-6">
+                  {project.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
+                </ul>
+                {project.outcome && <p className="border-l-4 border-primary/50 pl-4 leading-relaxed">{project.outcome}</p>}
+              </div>
             </CardContent>
           </Card>
         </section>
@@ -131,8 +133,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                             alt="Project detail graphic"
                             fill
                             
-                            data-ai-hint={project.detailsImageAiHint || "technical detail diagram"}
-                            sizes="(max-width: 1024px) 100vw, 33vw"
+                                                        sizes="(max-width: 1024px) 100vw, 33vw"
                             className="object-contain p-2"
                           />
                     </div>
