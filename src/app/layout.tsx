@@ -3,6 +3,7 @@ import { Inter, Playfair_Display } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import { NavigationBar } from '@/components/layout/NavigationBar';
+import { siteUrl } from '@/lib/site-url';
 import { Toaster } from '@/components/ui/toaster';
 
 const inter = Inter({
@@ -18,21 +19,25 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: 'Husan Aulakh | Portfolio',
+  title: { default: 'Husan Aulakh | Software Engineering & Applied AI', template: '%s | Husan Aulakh' },
   description:
-    'Portfolio of Husan Aulakh, Engineering Physics student at UBC, showcasing projects in AI, Robotics, and Software Development.',
-    metadataBase: new URL('http://localhost:9002'),
+    'Portfolio of Husan Aulakh, Engineering Physics graduate from UBC, showcasing projects in AI, Robotics, and Software Development.',
+    metadataBase: new URL(siteUrl),
+  alternates: { canonical: '/' },
   icons: {
     icon: '/logo.svg',
     apple: '/apple-icon.svg',
   },
   robots: { index: true, follow: true },
   openGraph: {
-    title: 'Husan Aulakh | Portfolio',
+    title: 'Husan Aulakh | Software Engineering & Applied AI',
     description: 'Projects and experience in AI, robotics, and software development.',
     type: 'website',
-    images: ['/logo-full.svg'],
+    url: siteUrl,
+    siteName: 'Husan Aulakh',
+    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Husan Aulakh — Software Engineering, AI and Robotics' }],
   },
+  twitter: { card: 'summary_large_image', images: ['/opengraph-image'] },
 };
 
 export default function RootLayout({
@@ -63,6 +68,7 @@ export default function RootLayout({
             </div>
           </main>
         </div>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'Person', name: 'Husan Aulakh', url: siteUrl, jobTitle: 'Software Engineer', alumniOf: { '@type': 'CollegeOrUniversity', name: 'University of British Columbia' }, sameAs: ['https://github.com/husanaulakh', 'https://www.linkedin.com/in/husan-aulakh/'] }) }} />
         <Toaster />
       </body>
     </html>

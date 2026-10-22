@@ -1,5 +1,8 @@
 
+import type { Metadata } from 'next';
 import Image from 'next/image';
+
+export const metadata: Metadata = { title: 'About', description: 'Education, engineering skills, and community work of Husan Aulakh.', alternates: { canonical: '/about' } };
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { CheckCircle, UserCircle, Award as AwardIconLucide, Users } from 'lucide-react'; // Renamed Award to AwardIconLucide to avoid conflict

@@ -1,5 +1,8 @@
 
+import type { Metadata } from 'next';
 import Link from 'next/link';
+
+export const metadata: Metadata = { title: 'Projects', description: 'Engineering, AI, robotics, and venture projects by Husan Aulakh.', alternates: { canonical: '/projects' } };
 import Image from 'next/image';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -46,10 +49,11 @@ export default function ProjectsPage() {
                   <Image
                     src={project.imageUrl || "https://placehold.co/600x400.png"}
                     alt={project.title}
-                    layout="fill"
-                    objectFit="cover"
+                    fill
+                    
                     data-ai-hint={project.imageAiHint || "technology abstract"}
-                    className="group-hover:scale-105 transition-transform duration-300"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                    <div className="absolute inset-0 bg-gradient-to-t from-earth-text/30 via-transparent to-transparent"></div>
                 </div>

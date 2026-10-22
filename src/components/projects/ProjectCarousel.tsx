@@ -76,10 +76,11 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
                       <Image
                         src={project.imageUrl || "https://placehold.co/600x338.png"}
                         alt={`${project.title} preview`}
-                        layout="fill"
-                        objectFit="contain"
+                        fill
+                        
                         data-ai-hint={project.imageAiHint || "product 3d device"}
-                        className="p-2 sm:p-4 group-hover:scale-105 transition-transform duration-300"
+                        sizes="(max-width: 768px) 100vw, 700px"
+                        className="object-contain p-2 sm:p-4 group-hover:scale-105 transition-transform duration-300"
                         loading="lazy"
                       />
                       <div className="absolute -bottom-1 left-0 w-full h-1/4 bg-gradient-to-t from-card/70 to-transparent"></div>

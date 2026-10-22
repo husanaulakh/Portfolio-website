@@ -1,5 +1,8 @@
 
+import type { Metadata } from 'next';
 import ContactForm from '@/components/contact/ContactForm';
+
+export const metadata: Metadata = { title: 'Contact', description: 'Contact Husan Aulakh about software engineering, AI, and robotics.', alternates: { canonical: '/contact' } };
 import { Mail, MapPin, Phone, Linkedin, Github } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
