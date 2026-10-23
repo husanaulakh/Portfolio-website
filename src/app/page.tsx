@@ -68,7 +68,7 @@ export default function HomePage() {
             <div className="space-y-2 p-5"><h3 className="font-serif text-2xl font-semibold">{project.title}</h3><p className="text-sm text-muted-foreground">{project.tagline}</p><span className="inline-flex items-center gap-1 text-sm font-semibold">View case study <ArrowRight className="h-4 w-4" aria-hidden="true" /></span></div>
           </Link>
         ))}</div>
-        <div className="flex flex-wrap gap-5 text-sm"><a className="inline-flex items-center gap-1 underline" href="https://github.com/husanaulakh" target="_blank" rel="noopener noreferrer"><Github className="h-4 w-4" aria-hidden="true" />GitHub</a><a className="inline-flex items-center gap-1 underline" href="https://www.linkedin.com/in/husan-aulakh/" target="_blank" rel="noopener noreferrer"><Linkedin className="h-4 w-4" aria-hidden="true" />LinkedIn</a><a className="underline" href="mailto:husanaulakh5@gmail.com?subject=Resume%20request">Request résumé</a></div>
+        <div className="flex flex-wrap gap-5 text-sm"><a className="inline-flex items-center gap-1 underline" href="https://github.com/husanaulakh" target="_blank" rel="noopener noreferrer"><Github className="h-4 w-4" aria-hidden="true" />GitHub</a><a className="inline-flex items-center gap-1 underline" href="https://www.linkedin.com/in/husan-aulakh/" target="_blank" rel="noopener noreferrer"><Linkedin className="h-4 w-4" aria-hidden="true" />LinkedIn</a><a className="underline" href="/resume.pdf" download="Husan_Aulakh_Resume.pdf" type="application/pdf">Download résumé (PDF)</a></div>
       </section>
       <section className="grid gap-8 md:grid-cols-[0.8fr_1.2fr] md:items-end">
         <div className="text-left">

@@ -49,6 +49,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         </Button>
         <h1 className="font-serif text-5xl font-bold mb-2 text-primary">{project.title}</h1>
         <p className="text-xl text-muted-foreground">{project.tagline}</p>
+        {project.role && <p className="mt-3 text-sm font-medium text-muted-foreground">My role: {project.role}</p>}
       </header>
 
       <div className="relative w-full aspect-[16/9] rounded-lg overflow-hidden shadow-lg max-h-[500px] mx-auto group bg-background/50">
@@ -61,7 +62,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           sizes="(max-width: 1024px) 100vw, 80vw"
           className="object-contain group-hover:scale-105 transition-transform duration-300"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-earth-text/40 to-transparent"></div>
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-earth-text/40 to-transparent"></div>
+        {project.imageUrl.endsWith(".svg") && <span className="absolute bottom-4 left-4 rounded-md bg-card/95 px-3 py-1 text-xs font-semibold text-card-foreground">Illustrative diagram · not a photograph</span>}
       </div>
 
       <div className="grid lg:grid-cols-3 gap-8 items-start">
@@ -73,6 +75,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             <CardContent>
               <div className="space-y-4 text-foreground/90">
                 <p className="leading-relaxed">{project.overview}</p>
+                {project.challenge && <><h3 className="font-serif text-xl font-semibold text-primary">The challenge</h3><p className="leading-relaxed">{project.challenge}</p></>}
+                {project.approach && <><h3 className="font-serif text-xl font-semibold text-primary">Technical approach</h3><ol className="list-outside list-decimal space-y-2 pl-6">{project.approach.map((step) => <li key={step}>{step}</li>)}</ol></>}
                 <h3 className="font-serif text-xl font-semibold text-primary">Key contributions</h3>
                 <ul className="list-outside list-disc space-y-2 pl-6">
                   {project.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
