@@ -19,7 +19,7 @@ export default {
         'earth-bg': '#F5F0E1',
         'earth-text': '#3E3A39',
         'earth-primary': '#C98474',
-        'earth-secondary': '#6A8E7F',
+        'earth-secondary': '#416451',
         'earth-card': '#FFFDF8',
 
   			background: 'hsl(var(--background))',

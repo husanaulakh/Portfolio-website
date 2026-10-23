@@ -54,7 +54,7 @@ export default function HomePage() {
           {signals.map((signal) => (
             <div key={signal.label} className="flex items-center gap-3 text-sm">
               <span className="h-2 w-2 rounded-full bg-primary" aria-hidden="true" />
-              <span><span className="block text-xs uppercase tracking-wider text-earth-text/50">{signal.label}</span><span className="text-earth-text/80">{signal.value}</span></span>
+              <span><span className="block text-xs uppercase tracking-wider text-earth-text/80">{signal.label}</span><span className="text-earth-text/80">{signal.value}</span></span>
             </div>
           ))}
         </div>

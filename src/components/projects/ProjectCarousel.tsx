@@ -63,12 +63,11 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
       aria-label="Featured Projects"
     >
       <div
-        aria-live="polite"
         className="flex transition-transform duration-500 ease-in-out"
         style={{ width: `${projects.length * 100}%`, transform: `translateX(-${currentIndex * (100 / projects.length)}%)` }} 
       >
-        {projects.map((project) => (
-          <div key={project.slug} className="w-full flex-shrink-0" style={{ width: `${100 / projects.length}%`}}>
+        {projects.map((project, index) => (
+          <div key={project.slug} aria-hidden={index !== currentIndex} className="w-full flex-shrink-0" style={{ width: `${100 / projects.length}%`}}>
              <div className="px-2 md:px-4">
                 <Card className="bg-card backdrop-blur-sm shadow-lg overflow-hidden h-full flex flex-col border-border hover:border-primary/40 transition-all">
                   <CardHeader className="p-4 sm:p-6">
@@ -92,13 +91,13 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
                   </CardContent>
                   <CardFooter className="p-4 sm:p-6 pt-2 flex flex-col sm:flex-row gap-3 justify-center">
                     <Button asChild variant="default" className="bg-primary text-primary-foreground hover:bg-primary/90 w-full sm:w-auto shadow-sm hover:shadow-md transition-shadow">
-                      <Link href={`/projects/${project.slug}`}>
+                      <Link href={`/projects/${project.slug}`} tabIndex={index === currentIndex ? 0 : -1}>
                         <Eye className="mr-2 h-4 w-4" /> View Project
                       </Link>
                     </Button>
                     {project.liveUrl && (
                       <Button asChild variant="outline" className="border-secondary text-secondary-foreground hover:bg-secondary/10 hover:text-secondary w-full sm:w-auto shadow-sm hover:shadow-md transition-shadow">
-                        <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                        <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" tabIndex={index === currentIndex ? 0 : -1}>
                           <ExternalLink className="mr-2 h-4 w-4" /> Live Demo
                         </a>
                       </Button>
@@ -110,6 +109,7 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
         ))}
       </div>
 
+      <p className="sr-only" aria-live="polite" aria-atomic="true">Featured project {currentIndex + 1} of {projects.length}: {projects[currentIndex]?.title}</p>
       {projects.length > 1 && (
         <>
           <Button
@@ -138,11 +138,8 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
               key={index}
               onClick={() => setCurrentIndex(index)}
               aria-label={`Go to project ${index + 1}`}
-              className={cn(
-                "h-2.5 w-2.5 rounded-full transition-all duration-300",
-                currentIndex === index ? "bg-primary scale-125" : "bg-muted hover:bg-primary/50"
-              )}
-            />
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full focus-visible:ring-2 focus-visible:ring-ring"
+            ><span aria-hidden="true" className={cn("block h-2.5 w-2.5 rounded-full transition-transform", currentIndex === index ? "bg-primary scale-125" : "bg-muted-foreground hover:bg-primary")} /></button>
           ))}
         </div>
     </div>

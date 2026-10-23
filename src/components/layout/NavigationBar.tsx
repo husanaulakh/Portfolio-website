@@ -41,7 +41,7 @@ export function NavigationBar() {
                       )}
                     >
                       <item.icon className='h-6 w-6' aria-hidden='true' />
-                      <span className="text-[10px] font-medium leading-tight md:sr-only">{item.label === "Work Experience" ? "Work" : item.label}</span>
+                      <span className="text-xs font-semibold leading-tight md:sr-only">{item.label === "Work Experience" ? "Work" : item.label}</span>
                       {isActive && (
                         <span className='absolute bottom-0 left-1/2 h-1.5 w-6 -translate-x-1/2 rounded-t-full bg-primary shadow-sm shadow-primary/30 md:left-0 md:top-1/2 md:h-6 md:w-1.5 md:-translate-y-1/2 md:translate-x-0 md:rounded-r-full md:rounded-t-none' />
                       )}
