@@ -5,6 +5,9 @@ export interface Project {
   shortDescription: string;
   overview: string;
   highlights: string[];
+  role?: string;
+  challenge?: string;
+  approach?: string[];
   outcome?: string;
   imageUrl: string;
   technologies: string[];
@@ -16,6 +19,12 @@ export interface Project {
 export const projectsData: Project[] = [
   {
     slug: 'lexli-reading-tools',
+    role: 'Developer and activity-system designer',
+    challenge: 'Make tutor-led structured literacy sessions reusable without losing specialized teaching interactions.',
+    approach: [
+      'Separate activity contracts and shared lesson services from teaching-specific interfaces.',
+      'Support lesson assembly, concept selection, offline use, and privacy-conscious state management.',
+    ],
     title: 'Lexli — Dyslexia Tutoring Tools',
     tagline: 'Modular tutor-led reading activities with a reusable lesson builder.',
     shortDescription: 'Built web-based literacy activities for tutor-led Orton-Gillingham lessons, including concept selection, activity ordering, and lesson review.',
@@ -32,6 +41,12 @@ export const projectsData: Project[] = [
   },
   {
     slug: 'ubc-agrobot-vision',
+    role: 'AI Lead; formerly Machine Learning Engineer',
+    challenge: 'Detect crops reliably and integrate the inference process with a resource-constrained robotics platform.',
+    approach: [
+      'Train and evaluate maize object detection on agricultural imagery.',
+      'Integrate inference with a C++ video pipeline deployed on a Jetson Orin edge device.',
+    ],
     title: 'UBC Agrobot — Agricultural Computer Vision',
     tagline: 'Machine learning for agricultural robotics.',
     shortDescription: 'Developed maize-detection computer vision and supported real-time inference for a student agricultural robotics team.',
@@ -47,6 +62,12 @@ export const projectsData: Project[] = [
   },
   {
     slug: '3d-image-similarity-capstone',
+    role: 'Engineering capstone team member',
+    challenge: 'Process and compare large collections of 3D models without excessive per-asset rendering costs.',
+    approach: [
+      'Normalize and render 3D assets through Python and Blender pipelines.',
+      'Use parallel processing with Ray and cloud resources to accelerate asset preparation.',
+    ],
     title: '3D Image Similarity Capstone Project',
     tagline: 'Built a scalable 3D similarity-processing pipeline.',
     shortDescription: 'Processed 3D assets with Python, Blender, Ray, and GCP, reducing per-asset processing time from six minutes to 30 seconds.',
@@ -63,6 +84,12 @@ export const projectsData: Project[] = [
   },
   {
     slug: 'ml-simulated-robot-competition',
+    role: 'Machine learning and robotics developer',
+    challenge: 'Navigate a simulated arena while recognizing visual targets from robot camera input.',
+    approach: [
+      'Train image models from a custom collection of simulated robot observations.',
+      'Integrate CNN-based perception and navigation components with ROS/Gazebo.',
+    ],
     title: 'Machine Learning Simulated Robot Competition',
     tagline: 'Robot navigation and license-plate recognition in ROS/Gazebo.',
     shortDescription: 'Built a simulated robot using computer vision and reinforcement learning, with reported navigation and recognition accuracy of 90% and 96%.',
@@ -78,6 +105,12 @@ export const projectsData: Project[] = [
   },
   {
     slug: 'engphys-robot-competition',
+    role: 'Embedded-controls and mechanical integration contributor',
+    challenge: 'Design a competition robot that can move, manipulate, and retrieve objects reliably.',
+    approach: [
+      'Prototype and integrate mechanical assemblies with electronic control.',
+      'Write C++ firmware for arm motions on an STM32/BluePill platform.',
+    ],
     title: 'Engineering Physics Robot Competition',
     tagline: 'A physical robot designed to navigate and retrieve objects.',
     shortDescription: 'Collaborated on the mechanical design, electronics, and embedded control of a treasure-retrieval robot.',
@@ -93,6 +126,12 @@ export const projectsData: Project[] = [
   },
   {
     slug: 'investment-memo-pu',
+    role: 'Venture strategy and financial analysis contributor',
+    challenge: 'Evaluate the commercial potential and financial assumptions of a browser-based OS concept.',
+    approach: [
+      'Model the market size, pricing options, and plausible adoption scenarios.',
+      'Compare competitors, operating assumptions, and go-to-market tradeoffs.',
+    ],
     title: 'Investment Memo Project – Puter',
     tagline: 'Developed an investment case and delivered a successful venture pitch.',
     shortDescription: 'Led market sizing, competitive analysis, financial modeling, pricing, and a narrative pitch for the Puter cloud-OS venture.',
@@ -102,13 +141,19 @@ export const projectsData: Project[] = [
       'Analyzed competitors and developed a differentiated pricing and go-to-market narrative.',
       'Built financial forecasts and communicated the venture case to a panel.',
     ],
-    outcome: 'The project materials report securing $25,000 in CDL funding. This figure should be independently corroborated before external promotion.',
+    outcome: 'Prepared an investor-style memo and presented commercial assumptions for panel discussion.',
     imageUrl: '/images/Puter_main.png',
     detailsImageUrl: '/images/Puter_page1.png',
     technologies: ['Market Analysis', 'Financial Modeling', 'Pricing Strategy', 'Go-to-Market', 'Venture Valuation'],
   },
   {
     slug: 'venture-strategy-northernmost',
+    role: 'Venture strategy researcher',
+    challenge: 'Evaluate the market, regulatory, and go-to-market complexity of a medical logistics concept.',
+    approach: [
+      'Assess incumbent organ-transport methods and addressable market assumptions.',
+      'Outline an initial pilot, potential pricing model, and commercialization risks.',
+    ],
     title: 'Venture Strategy Project – Northernmost',
     tagline: 'Market analysis and go-to-market planning for a kidney-transport venture.',
     shortDescription: 'Developed a venture strategy covering competitive positioning, organ-transport market assumptions, and pilot planning.',

@@ -36,14 +36,7 @@ const educationData: TimelineEvent[] = [
     date: '2020',
     description: 'One of 2 recipients at William Aberhart for academic excellence, leadership and community activities.',
   },
-  {
-    id: 'edu2',
-    type: 'education',
-    title: 'William Aberhart High School',
-    institution: 'Awarded by William Aberhart High School Alumni',
-    date: '2017 - 2020',
-    // description: '',
-  },
+
 ];
 
 export default function EducationTimeline() {

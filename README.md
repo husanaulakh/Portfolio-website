@@ -44,6 +44,8 @@ The `lint` script runs the pinned Biome CLI through npm's package runner. `test`
 
 Case studies are structured as text and bullet points rendered by React; they do not inject HTML. Placeholder project visuals are clearly labeled concept illustrations, not screenshots.
 
+The downloadable résumé at `public/resume.pdf` was created from existing public portfolio details. Review it before using it as an official job application document; update it whenever experience changes.
+
 ## Deployment
 
 Deploy on a Next.js-compatible host and configure production contact variables. Verify all quantitative career/project claims before using the site as a formal resume.
