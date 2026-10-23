@@ -54,7 +54,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
       <div className="relative w-full aspect-[16/9] rounded-lg overflow-hidden shadow-lg max-h-[500px] mx-auto group bg-background/50">
         <Image
-          src={project.imageUrl || "https://placehold.co/1200x675.png"}
+          src={project.imageUrl}
           alt={`${project.title} main image`}
           fill
           

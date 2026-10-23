@@ -1,0 +1,21 @@
+name: Production availability check
+on:
+  schedule:
+    - cron: '23 */6 * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - name: Verify public production routes
+        env:
+          SITE_URL: https://husanaulakh.vercel.app
+        run: |
+          set -euo pipefail
+          for path in / /about /projects /contact /sitemap.xml /robots.txt /resume.pdf; do
+            echo "Checking ${SITE_URL}${path}"
+            curl --fail --location --silent --show-error --retry 2 --retry-all-errors --max-time 25 --output /dev/null "${SITE_URL}${path}"
+          done

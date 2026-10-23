@@ -33,6 +33,8 @@ npm test
 npm run build
 ```
 
+CI additionally runs pinned Playwright Chromium smoke tests against a locally built site. Every six hours the separate production-availability workflow checks the public homepage, key routes, sitemap, and downloadable résumé. This monitors availability but does not replace Lighthouse/Core Web Vitals measurement.
+
 The `lint` script runs the pinned Biome CLI through npm's package runner. `test` uses the Node.js built-in test runner. GitHub Actions runs all checks on pull requests and pushes to main, with a blocking production dependency-security audit. Build-only dependencies still have a known unpatched `braces` advisory (`GHSA-vfj7-8cjw-p6xm`); evaluate it separately with `npm audit` and revisit when upstream publishes a fix.
 
 ## Content editing
