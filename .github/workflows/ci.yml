@@ -31,3 +31,19 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm audit --omit=dev --audit-level=high
+
+  browser-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - name: Install pinned browser test runner
+        run: npm install --no-save --package-lock=false --ignore-scripts @playwright/test@1.56.0
+      - run: npx playwright install --with-deps chromium
+      - run: npm run build
+      - run: npx playwright test
