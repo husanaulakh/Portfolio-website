@@ -30,3 +30,9 @@ test('all portfolio image paths resolve to tracked assets', () => {
     }
   }
 });
+
+test('canonical production URL points to the actual Vercel alias', async () => {
+  const { siteUrl } = await import('../src/lib/site-url.ts');
+  assert.equal(new URL(siteUrl).origin, siteUrl);
+  if (!process.env.NEXT_PUBLIC_SITE_URL) assert.equal(siteUrl, 'https://husanaulakh.vercel.app');
+});

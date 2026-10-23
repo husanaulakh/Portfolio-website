@@ -2,7 +2,7 @@
 
 A Next.js 15 portfolio showcasing software engineering, robotics, machine learning, and venture projects.
 
-**Live:** https://portfolio-website-mu-lime-32.vercel.app
+**Live:** https://husanaulakh.vercel.app
 
 ## Stack
 
@@ -20,9 +20,9 @@ npm ci
 npm run dev
 ```
 
-Set `RESEND_API_KEY`, `CONTACT_EMAIL_RECIPIENT`, and `CONTACT_EMAIL_SENDER` in `.env.local` for contact delivery. For developer-only preview mode, both `NEXT_PUBLIC_CONTACT_DEV_TOOLS=true` and `CONTACT_DEV_MODE=true` are required. Never expose `RESEND_API_KEY` through a `NEXT_PUBLIC_` variable. The API includes a honeypot and a best-effort instance-level limiter; configure edge/provider abuse protection for distributed deployments.
+Set `RESEND_API_KEY`, `CONTACT_EMAIL_RECIPIENT`, and `CONTACT_EMAIL_SENDER` in `.env.local` for contact delivery. For production use a sender address on a domain verified in Resend; `onboarding@resend.dev` is limited to testing with the account owner's recipient and is not a general-purpose sender. For developer-only preview mode, both `NEXT_PUBLIC_CONTACT_DEV_TOOLS=true` and `CONTACT_DEV_MODE=true` are required. Never expose `RESEND_API_KEY` through a `NEXT_PUBLIC_` variable. The API includes a honeypot and a best-effort instance-level limiter; configure edge/provider abuse protection for distributed deployments.
 
-Set `NEXT_PUBLIC_SITE_URL` to the production origin if you move to a custom domain.
+The canonical production URL is `https://husanaulakh.vercel.app`. Set `NEXT_PUBLIC_SITE_URL` if you move to a custom domain.
 
 ## Checks
 
