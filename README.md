@@ -33,7 +33,7 @@ npm test
 npm run build
 ```
 
-The `lint` script runs the pinned Biome CLI through npm's package runner. `test` uses the Node.js built-in test runner. GitHub Actions runs all checks on pull requests and pushes to main, with a non-blocking dependency-security audit.
+The `lint` script runs the pinned Biome CLI through npm's package runner. `test` uses the Node.js built-in test runner. GitHub Actions runs all checks on pull requests and pushes to main, with a blocking production dependency-security audit. Build-only dependencies still have a known unpatched `braces` advisory (`GHSA-vfj7-8cjw-p6xm`); evaluate it separately with `npm audit` and revisit when upstream publishes a fix.
 
 ## Content editing
 
